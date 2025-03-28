@@ -17,9 +17,10 @@ Run_PATH = f'{Base_PATH}/run'  # Modify to the actual path
 Database_PATH = f'{Base_PATH}/database'
 Case_PATH = ''
 
-config_file_path = os.getenv('CONFIG_FILE_PATH', '')
+# Use a default config file path if not provided
+config_file_path = os.getenv('CONFIG_FILE_PATH', f'{Base_PATH}/inputs/Cavity.yaml')
 
-print("config_file_path",config_file_path)
+print("config_file_path", config_file_path)
 
 config = load_config(config_file_path)
 

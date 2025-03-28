@@ -1,0 +1,6 @@
+case name: ductSecondaryFlow
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'R', 'nut', 'U', 'p', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'R': '0', 'nut': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}

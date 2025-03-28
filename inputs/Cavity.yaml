@@ -5,8 +5,8 @@ batchsize: 10
 searchdocs: 2
 run_times: 10
 
-MetaGPT_PATH: "XXX"
-OPENAI_API_KEY: "XXX"
-OPENAI_PROXY: "XXX"
-OPENAI_BASE_URL: "XXX"
-model: "gpt-4o"
+MetaGPT_PATH: "/root/MetaOpenFOAM/MetaGPT"
+OPENAI_API_KEY: "1"
+OPENAI_PROXY: ""
+OPENAI_BASE_URL: "http://127.0.0.1:1452/v1/"
+model: "Qwen/QwQ-32B"

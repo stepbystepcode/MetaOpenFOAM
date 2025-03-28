@@ -1,13 +1,12 @@
-
 from langchain_community.vectorstores import FAISS
-from langchain_community.chat_models import ChatOpenAI
-
-from langchain_community.embeddings.openai import OpenAIEmbeddings
+from langchain_openai import ChatOpenAI
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain.chains import RetrievalQA
 import os
 
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
-from langchain.chains import RetrievalQA
+from pydantic import ConfigDict
 
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
@@ -15,6 +14,8 @@ from openai import OpenAI
 import config_path
 from langchain_community.callbacks import get_openai_callback
 from Statistics import global_statistics
+
+# No need for the Pydantic monkey patch, we'll configure this differently
 
 class AsyncQA_tutorial:
     _instance = None
@@ -229,9 +230,12 @@ def setup_qa_ori():
     return get_gpt4o_response
 
 def setup_qa_tutorial():
-
     persist_directory = f'{config_path.Database_PATH}/openfoam_tutorials'
-    vectordb = FAISS.load_local(persist_directory, OpenAIEmbeddings(),allow_dangerous_deserialization=True)
+    
+    # Use a simpler initialization for HuggingFaceEmbeddings
+    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-m3")
+    
+    vectordb = FAISS.load_local(persist_directory, embeddings, allow_dangerous_deserialization=True)
     chat_model = ChatOpenAI(model=config_path.model, temperature=config_path.temperature)
     retriever = vectordb.as_retriever(search_type="similarity", search_kwargs={"k": config_path.searchdocs})
 
@@ -242,13 +246,15 @@ def setup_qa_tutorial():
         return_source_documents=True
     )
 
-
     return qa_interface
 
 def setup_qa_tutorial_name():
-
     persist_directory = f'{config_path.Database_PATH}/openfoam_tutorials_summary'
-    vectordb = FAISS.load_local(persist_directory, OpenAIEmbeddings(),allow_dangerous_deserialization=True)
+    
+    # Use a simpler initialization for HuggingFaceEmbeddings
+    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-m3")
+    
+    vectordb = FAISS.load_local(persist_directory, embeddings, allow_dangerous_deserialization=True)
     chat_model = ChatOpenAI(model=config_path.model, temperature=config_path.temperature)
     retriever = vectordb.as_retriever(search_type="similarity", search_kwargs={"k": config_path.searchdocs})
     qa_interface = RetrievalQA.from_chain_type(
@@ -260,29 +266,35 @@ def setup_qa_tutorial_name():
     return qa_interface
 
 def setup_qa_allrun():
-
     persist_directory = f'{config_path.Database_PATH}/openfoam_allrun'
-    vectordb = FAISS.load_local(persist_directory, OpenAIEmbeddings(),allow_dangerous_deserialization=True)
+    
+    # Use a simpler initialization for HuggingFaceEmbeddings
+    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-m3")
+    
+    vectordb = FAISS.load_local(persist_directory, embeddings, allow_dangerous_deserialization=True)
     chat_model = ChatOpenAI(model=config_path.model, temperature=config_path.temperature)
     retriever = vectordb.as_retriever(search_type="similarity", search_kwargs={"k": config_path.searchdocs})
     qa_interface = RetrievalQA.from_chain_type(
         llm=chat_model,
         chain_type="stuff",
         retriever=retriever,
-        return_source_documents=True,
+        return_source_documents=True
     )
     return qa_interface
 
 def setup_qa_command_help():
-
     persist_directory = f'{config_path.Database_PATH}/openfoam_command_helps'
-    vectordb = FAISS.load_local(persist_directory, OpenAIEmbeddings(),allow_dangerous_deserialization=True)
+    
+    # Use a simpler initialization for HuggingFaceEmbeddings
+    embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-m3")
+    
+    vectordb = FAISS.load_local(persist_directory, embeddings, allow_dangerous_deserialization=True)
     chat_model = ChatOpenAI(model=config_path.model, temperature=config_path.temperature)
     retriever = vectordb.as_retriever(search_type="similarity", search_kwargs={"k": config_path.searchdocs})
     qa_interface = RetrievalQA.from_chain_type(
         llm=chat_model,
         chain_type="stuff",
         retriever=retriever,
-        return_source_documents=True,
+        return_source_documents=True
     )
     return qa_interface

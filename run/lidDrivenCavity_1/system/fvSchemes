@@ -1,0 +1,121 @@
+FoamFile block is standard, so I can copy that as is. The location is "system", object "fvSchemes", so that's fine.
+
+The ddtSchemes section has default as steadyState. Since lid-driven cavity is typically a steady-state problem, that's okay. Unless the user wants transient, but the problem statement doesn't mention that, so keep it as steadyState.
+
+GradSchemes: The default is Gauss linear. The example has a 'limited' entry, but maybe that's for specific variables. Since the problem is simpler (cavity), maybe the default is sufficient. Unless turbulence models are involved, but the user didn't mention turbulence. Wait, the example includes turbulence terms like k, epsilon, R. If the user's case is laminar, maybe those aren't needed. Hmm, but the problem says incompressible, but doesn't specify laminar or turbulent. The example uses turbulence schemes, but maybe the user's case is laminar. Wait, the problem says "incompressible lid driven cavity flow" which is often done with laminar unless stated otherwise. So perhaps the turbulence schemes in the example can be omitted. But the user's task says to use the provided file as a reference. Let me check the original problem again. The user's task is to write an fvSchemes for their case, using the provided one as a reference. The example includes turbulence terms, but maybe the user's case is laminar. Wait, but the problem doesn't specify, so perhaps I should assume laminar unless told otherwise. Hmm, but the example includes those, so maybe the user's case might also use turbulence? The problem statement doesn't say, so perhaps it's safer to include the same schemes as the example but maybe adjust if needed. Alternatively, maybe the user's case is laminar, so those lines can be removed. Wait, but the user's problem is a lid-driven cavity, which is often done with laminar flow. So perhaps the turbulence schemes in the example are not needed here. Let me think again. The example's divSchemes has entries for div(phi,U) as bounded Gauss linearUpwindV limited. The other entries like turbulence, div(phi,k), etc., are for turbulence models. Since the user's problem is a lid-driven cavity, which is typically laminar unless specified, maybe those lines can be omitted. But the user's task says to use the provided file as a reference. The example includes those, so perhaps the user's case might also use a turbulence model. Wait, but the problem statement doesn't mention turbulence. Hmm, this is a bit ambiguous. Maybe I should proceed with the same structure as the example but adjust where necessary. Let me proceed step by step.
+
+Looking at the divSchemes section in the example:
+
+div(phi,U) is set to bounded Gauss linearUpwindV limited. The other entries are for turbulence variables. Since the problem is incompressible and lid-driven, perhaps the turbulence terms are not needed. So maybe the user's case is laminar, so those lines can be removed. But the example uses linearUpwindV for U. Alternatively, maybe the user's case is laminar, so the turbulence schemes can be omitted. Let me check the standard fvSchemes for a laminar case. In simpleFoam (which is for incompressible, laminar), the typical div(phi,U) is bounded Gauss linearUpwind grad(U). Wait, but the example uses linearUpwindV. Maybe that's a typo or a specific choice. Alternatively, perhaps the example uses a different velocity gradient. Hmm, perhaps the user's case can use the same as the example, but without the turbulence terms. So in the divSchemes, I can keep the div(phi,U) line and remove the turbulence-related entries. Let me see:
+
+Original example's divSchemes:
+
+div(phi,U)          bounded Gauss linearUpwindV limited;
+
+turbulence          bounded Gauss linearUpwind limited;
+div(phi,k)          $turbulence;
+div(phi,epsilon)    $turbulence;
+div(phi,R)          $turbulence;
+
+div(dev(R))         Gauss linear;
+div(devTau)         Gauss linear;
+div((nuEff*dev2(T(grad(U)))))  Gauss linear;
+div((nu*dev(T(grad(U)))))  Gauss linear;
+div((nu*dev2(T(grad(U))))) Gauss linear;
+
+If the case is laminar, then the turbulence terms (k, epsilon, R, etc.) are not present, so those lines can be removed. The remaining lines after div(phi,U) are for div(dev(R)), etc., which are part of turbulence models. So in a laminar case, those can be omitted. So the divSchemes would have only the first line (div(phi,U)), and the others related to turbulence can be removed. Wait, but the example also has div(dev(R)), etc. Maybe those are part of the turbulence model's equations. Since the user's case is laminar, those are not needed. So the divSchemes would be:
+
+divSchemes
+{
+    default             none;
+
+    div(phi,U)          bounded Gauss linearUpwindV limited;
+}
+
+Wait, but in the example, the default is none, so that's okay. The other lines are for specific terms. Since they are not needed here, they can be removed. Alternatively, maybe the user's case is using a turbulence model. The problem statement doesn't specify, so perhaps it's better to include the same as the example but with a note? But the user says to use the provided file as a reference. Since the example includes those, perhaps the user's case might also use turbulence. Hmm, this is a bit of a problem. The user's problem is a lid-driven cavity, which is often done with laminar, but maybe they want to use a turbulence model. Since the problem statement doesn't specify, perhaps I should proceed with the same as the example but remove the turbulence terms. Alternatively, maybe the user expects the same as the example, so perhaps include all the lines but that might be incorrect for a laminar case. Alternatively, perhaps the example is for a different case (ductSecondaryFlow) which might involve turbulence, but the user's case is lid-driven cavity which is laminar. Hmm. Since the user's task is to write the fvSchemes for their case, and the example is given as a reference, perhaps the best approach is to follow the example's structure but adjust where necessary. Since the problem is incompressible and lid-driven, perhaps the turbulence terms are not needed, so remove them. So the divSchemes would have only the div(phi,U) line and the default none. The other lines related to turbulence can be omitted. 
+
+Wait, but in the example, there's also lines like div(dev(R)), etc. Those are part of the Reynolds stress models or other turbulence models. Since the user's case is lid-driven cavity, which is typically laminar, those can be removed. So the divSchemes would be:
+
+divSchemes
+{
+    default             none;
+
+    div(phi,U)          bounded Gauss linearUpwindV limited;
+}
+
+Wait, but in the example, the line is "bounded Gauss linearUpwindV limited". The "V" might be a typo, but perhaps it's a specific scheme. Alternatively, maybe it's supposed to be linearUpwind. Let me check OpenFOAM's documentation. The linearUpwind scheme is a standard one. The "V" might be a mistake. Alternatively, maybe it's a typo and should be linearUpwind. Hmm, but I'll keep it as in the example unless I'm sure. Alternatively, perhaps the user's example has a typo, but I should follow it as given. So I'll keep the same.
+
+Next, the laplacianSchemes: The example uses Gauss linear orthogonal. That's okay for a cavity case. So keep that.
+
+interpolationSchemes: default linear. That's standard, so keep.
+
+snGradSchemes: default orthogonal. Okay.
+
+wallDist: method meshWave, nRequired yes. That's okay.
+
+Putting it all together, the fvSchemes would be similar to the example but without the turbulence-related entries in divSchemes. Let me write that out.
+
+Wait, but in the example's gradSchemes, there's a line:
+
+limited         cellLimited Gauss linear 1;
+
+Is that necessary? The default is Gauss linear. The 'limited' entry might be for a specific variable. Since the problem is simpler, perhaps that line can be removed. Alternatively, maybe it's part of the example's setup. Since the user's problem is a lid-driven cavity, perhaps the default grad scheme is sufficient, so the 'limited' line can be omitted. So the gradSchemes would be:
+
+gradSchemes
+{
+    default         Gauss linear;
+}
+
+Thus, the final fvSchemes would look like the example but with the turbulence-related lines in divSchemes removed, and possibly the 'limited' line in gradSchemes removed.
+
+Wait, but the example's gradSchemes has both default and a 'limited' entry. The 'limited' might be for a specific field, but since the user's case is simpler, perhaps it's not needed. So removing that line.
+
+So the complete fvSchemes would be:
+
+/* ... header ... */
+
+ddtSchemes
+{
+    default         steadyState;
+}
+
+gradSchemes
+{
+    default         Gauss linear;
+}
+
+divSchemes
+{
+    default             none;
+
+    div(phi,U)          bounded Gauss linearUpwindV limited;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear orthogonal;
+}
+
+interpolationSchemes
+{
+    default         linear;
+}
+
+snGradSchemes
+{
+    default         orthogonal;
+}
+
+wallDist
+{
+    method          meshWave;
+    nRequired       yes;
+}
+
+Wait, but in the example's div(phi,U) line, the scheme is "bounded Gauss linearUpwindV limited". The "V" might be a typo. Alternatively, maybe it's supposed to be linearUpwind. Let me check OpenFOAM's documentation. The linearUpwind scheme is a standard divergence scheme. The "V" might be a mistake. Alternatively, perhaps it's a different variant. Since the user provided the example with that, I should keep it as is unless I'm certain it's wrong. So I'll proceed with the same.
+
+Another thing to check: the problem is incompressible, so the pressure-velocity coupling is handled by the solver (simpleFoam), but the fvSchemes don't need to change for that. The schemes here are okay.
+
+Therefore, the final fvSchemes file would be as above, with the turbulence-related lines removed from divSchemes and the 'limited' entry in gradSchemes also removed.
+</think>
+

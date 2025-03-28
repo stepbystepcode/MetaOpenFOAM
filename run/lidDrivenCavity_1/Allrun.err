@@ -1,0 +1,1 @@
+/opt/openfoam10/bin/tools/RunFunctions: line 53: 35628 Segmentation fault      (core dumped) $APP_RUN "$@" > log.$LOG_SUFFIX 2>&1

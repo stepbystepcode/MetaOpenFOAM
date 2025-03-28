@@ -1,0 +1,4536 @@
+Here is the list of linux execution command allrun files of specific case in openfoam 10,
+```input_file_begin: linux execution command allrun file of case mixerVessel2D (domain: lagrangian, category: None, solver:particleFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1 # Run from this directory
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/mixerVessel2D
+runApplication createBaffles -overwrite
+runApplication splitBaffles -overwrite
+runApplication createNonConformalCouples -overwrite nonCouple1 nonCouple2
+
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+runApplication reconstructPar
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case hopperEmptying (domain: lagrangian, category: hopper, solver:particleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case hopperInitialState (domain: lagrangian, category: hopper, solver:particleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case Goldschmidt (domain: lagrangian, category: None, solver:denseParticleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case column (domain: lagrangian, category: None, solver:denseParticleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case GoldschmidtMPPIC (domain: lagrangian, category: None, solver:denseParticleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cyclone (domain: lagrangian, category: None, solver:denseParticleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+runApplication snappyHexMesh -overwrite
+
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case injectionChannel (domain: lagrangian, category: None, solver:denseParticleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDaily (domain: incompressible, category: None, solver:adjointShapeOptimisationFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application="$(getApplication)"
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDaily (domain: incompressible, category: LES, solver:pisoFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application="$(getApplication)"
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case motorBike (domain: incompressible, category: motorBike, solver:pisoFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# copy motorbike surface from resources directory
+cp $FOAM_TUTORIALS/resources/geometry/motorBike.obj.gz constant/geometry/
+
+runApplication blockMesh
+runApplication decomposePar -copyZero
+runParallel snappyHexMesh -overwrite
+
+find . -type f -iname "*level*" -exec rm {} \;
+
+runParallel renumberMesh -overwrite
+
+runParallel potentialFoam -initialiseUBCs
+
+runParallel $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDailyMapped (domain: incompressible, category: LES, solver:pisoFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case porousBlockage (domain: incompressible, category: laminar, solver:pisoFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+
+runApplication topoSet
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cavityCoupledU (domain: incompressible, category: RAS, solver:pisoFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cavity (domain: incompressible, category: RAS, solver:pisoFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case elbow (domain: incompressible, category: None, solver:icoFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application directory
+application=$(getApplication)
+
+runApplication fluentMeshToFoam elbow.msh
+runApplication "$application"
+runApplication foamMeshToFluent
+runApplication foamDataToFluent
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cavityClipped (domain: incompressible, category: cavity, solver:icoFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cavityGrade (domain: incompressible, category: cavity, solver:icoFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cavity (domain: incompressible, category: cavity, solver:icoFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case mixer (domain: incompressible, category: None, solver:SRFSimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case rotor2D (domain: incompressible, category: None, solver:SRFPimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case squareBump (domain: incompressible, category: None, solver:shallowWaterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case straightDuctImplicit (domain: incompressible, category: None, solver:porousSimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+if [ -n "$FOAMY_HEX_MESH" ]
+then
+    ./Allmesh
+
+    runApplication $(getApplication)
+fi
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case angledDuctExplicit (domain: incompressible, category: None, solver:porousSimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/angledDuct
+runApplication $(getApplication)
+
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case angledDuctImplicit (domain: incompressible, category: None, solver:porousSimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/angledDuct
+runApplication $(getApplication)
+
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case boundaryWallFunctionsProfile (domain: incompressible, category: None, solver:boundaryFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+exponents="2 3 4 5 6 7 8"
+
+echo "# yPlus vs uPlus" > yPlus_vs_uPlus
+
+for e in $exponents
+do
+    echo "    Setting nu to 1e-$e"
+
+    sed "s/XXX/$e/g" constant/physicalProperties.template \
+        > constant/physicalProperties
+
+    runApplication -s $e  $(getApplication)
+
+    # extract y+, U+
+    # note: both must be added to foamLog.db
+    runApplication -s $e  foamLog log.boundaryFoam.$e
+
+    if [ -e logs/yPlus_0 ]
+    then
+        yPlus=`awk < logs/yPlus_0 'END{print $2}'`
+        uPlus=`awk < logs/uPlus_0 'END{print $2}'`
+
+        echo "$yPlus $uPlus" >> yPlus_vs_uPlus
+    fi
+
+    rm -rf logs
+done
+
+
+# create validation plot
+# test if gnuplot exists on the system
+if ! which gnuplot > /dev/null 2>&1
+then
+    echo "gnuplot not found - skipping graph creation" >&2
+    exit 1
+fi
+
+graphName="OF_vs_ANALYTICAL.eps"
+
+echo "Creating graph of u+ vs y+ to $graphName"
+gnuplot<<EOF
+    set terminal postscript eps color enhanced
+    set output "$graphName"
+    set grid
+    set xlabel "y+"
+    set ylabel "u+"
+    set key top left
+    set size 0.75, 0.75
+    set parametric
+    # u+ range
+    set xrange [0:20000]
+    # Spaldings law
+    k=0.41
+    E=9.8
+    f(t) = t + 1/E*(exp(k*t) - 1 - k*t*(1 + 0.5*k*t) - 1/6*k*t**3)
+    set trange [0.1:2000]
+    set samples 10000
+    set logscale x
+    set format x "10^{%T}"
+    plot f(t),t title "Spalding" with lines linetype -1, \
+        "yPlus_vs_uPlus" title "OpenFOAM" with points lt 1 pt 6
+EOF
+
+echo Done
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case boundaryWallFunctions (domain: incompressible, category: None, solver:boundaryFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case boundaryNonNewtonian (domain: incompressible, category: None, solver:boundaryFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case boundaryLaunderSharma (domain: incompressible, category: None, solver:boundaryFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case channel395 (domain: incompressible, category: LES, solver:pimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application directory
+application=$(getApplication)
+
+runApplication blockMesh
+
+#- Run serial
+#runApplication $application
+
+#- Run parallel
+runApplication decomposePar -cellDist
+runParallel $application
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case planarPoiseuille (domain: incompressible, category: laminar, solver:pimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication $(getApplication)
+
+wmake validation/WatersKing
+runApplication WatersKing
+
+( cd validation && ./createGraph )
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case nonConformalChannel (domain: incompressible, category: laminar, solver:pimpleFoam):
+#!/bin/sh
+
+cd "${0%/*}" || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+mesh()
+{
+    runApplication -s $1 blockMesh -dict system/blockMeshDict.$1
+}
+
+run()
+{
+    runApplication -s $1 $(getApplication)
+    mv postProcessing/inletFlowRate postProcessing/inletFlowRate.$1
+    mv postProcessing/outletFlowRate postProcessing/outletFlowRate.$1
+}
+
+if isTest $@
+then
+    foamDictionary -entry startFrom -set startTime system/controlDict
+fi
+
+mesh AMI
+run AMI
+
+mesh nonConformalCyclic
+runApplication -s nonConformalCyclic createNonConformalCouples -overwrite nonCoupleUp nonCoupleDown
+run nonConformalCyclic
+
+inletFlowRateAMI=postProcessing/inletFlowRate.AMI/0/surfaceFieldValue.dat
+outletFlowRateAMI=postProcessing/outletFlowRate.AMI/0/surfaceFieldValue.dat
+inletFlowRateNonConformalCyclic=postProcessing/inletFlowRate.nonConformalCyclic/0/surfaceFieldValue.dat
+outletFlowRateNonConformalCyclic=postProcessing/outletFlowRate.nonConformalCyclic/0/surfaceFieldValue.dat
+
+gnuplot << EOF
+set terminal postscript eps color enhanced
+set output "error.eps"
+set xlabel "Time (s)"
+set ylabel "Inlet-Outlet Conservation Error (%)"
+plot \
+    "< paste $inletFlowRateAMI $outletFlowRateAMI" \
+    us 1:(100*(\$4+\$2)/\$2) every ::1 w l t "AMI" , \
+    "< paste $inletFlowRateNonConformalCyclic $outletFlowRateNonConformalCyclic" \
+    us 1:(100*(\$4+\$2)/\$2) every ::1 w l t "nonConformalCyclic"
+EOF
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case planarCouette (domain: incompressible, category: laminar, solver:pimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case movingCone (domain: incompressible, category: laminar, solver:pimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+mapTimes="0.0015 0.003"
+
+# Iterate the string variable using for loop
+for mapTime in $mapTimes; do
+
+    runApplication -a blockMesh -dict blockMeshDict_$mapTime
+    rm -rf constant/meshToMesh_$mapTime
+    mkdir constant/meshToMesh_$mapTime
+    mv constant/polyMesh constant/meshToMesh_$mapTime
+
+done
+
+runApplication -a blockMesh
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case blockedChannel (domain: incompressible, category: laminar, solver:pimpleFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication postProcess -func generateAlphas
+runApplication $(getApplication)
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDailyPulse (domain: incompressible, category: laminar, solver:pimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application="$(getApplication)"
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case planarContraction (domain: incompressible, category: laminar, solver:pimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case offsetCylinder (domain: incompressible, category: laminar, solver:pimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case ballValve (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Copy torus surface from resources directory
+mkdir constant/geometry && cp $FOAM_TUTORIALS/resources/geometry/ballValve-torus.obj.gz constant/geometry
+
+# Mesh
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/ballValve
+runApplication topoSet
+runApplication transformPoints -pointSet ball "Rz=-45"
+
+# Create couples
+runApplication createNonConformalCouples -overwrite pipeNonCouple ballNonCouple
+
+# Decompose
+runApplication decomposePar -cellDist
+
+# Set the value of the scalar transport field
+runParallel setFields
+
+# Run
+runParallel $(getApplication);
+
+# Reconstruct
+runApplication reconstructPar -newTimes
+
+# Plot the flow rates
+./createGraphs
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case elipsekkLOmega (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application directory
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication transformPoints "scale=(1.6666 1 1)"
+
+runApplication mirrorMesh -dict mirrorMeshDict.x -overwrite
+rm log.mirrorMesh
+runApplication mirrorMesh -dict mirrorMeshDict.y -overwrite
+
+runApplication topoSet
+runApplication createPatch -overwrite
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case flowWithOpenBoundary (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+
+usage () {
+    exec 1>&2
+    while [ "$#" -ge 1 ]; do echo "$1"; shift; done
+    cat <<USAGE
+
+Usage: ${0##*/} [OPTIONS]
+options:
+  -d | -distort        distort the mesh
+  -h | -help           help
+  -p | -pBC <type>     set BC for p on the atmosphere patch
+  -U | -UBC <type>     set BC for U on the atmosphere patch
+
+CFD simulation to demonstrate boundary conditions at a patch with mixed inflow
+and outflow. The user can set the boundary condition on the atmosphere patch
+with options:
++ p: totalPressure (default) or fixedValue
++ U: pressureInletOutletVelocity (default) or zeroGradient
+
+USAGE
+    exit 1
+}
+
+distort () {
+    wmake distortMesh
+    runApplication distortMesh
+    rm 0/meshPhi;
+    mv 0/polyMesh/points constant/polyMesh
+    rm -rf 0/polyMesh
+}
+
+setAtmosphereBC () {
+    _field="$1"
+    _BC="$2"
+
+    echo "Setting $_field BC on atmosphere patch to $_BC"
+
+    runApplication -a foamDictionary \
+        -entry boundaryField/atmosphere/type \
+        -set "$_BC" \
+        "0/$_field" > /dev/null 2>&1
+}
+
+# VARIABLES
+distort=""
+pBC=""
+UBC=""
+
+# OPTIONS
+while [ "$#" -gt 0 ]
+do
+    case "$1" in
+    -d | -distort)
+        distort="yes"
+        shift
+        ;;
+    -h | -help)
+        usage
+        ;;
+    -p | -pBC)
+        [ "$#" -ge 2 ] || usage "'$1' option requires an argument"
+        pBC="$2"
+        shift 2
+        ;;
+    -U | -UBC)
+        [ "$#" -ge 2 ] || usage "'$1' option requires an argument"
+        UBC="$2"
+        shift 2
+        ;;
+    -test)
+        shift
+        ;;
+    -*)
+        usage "Invalid option '$1'"
+        ;;
+    *)
+        break
+        ;;
+    esac
+done
+
+case "$pBC" in
+    totalPressure|fixedValue|"") ;;
+    *)
+      usage "Invalid boundary condition '$pBC' for p."\
+            "Valid options: 'totalPressure', 'fixedValue'."
+      ;;
+esac
+
+case "$UBC" in
+    pressureInletOutletVelocity|zeroGradient|"") ;;
+    *)
+      usage "Invalid boundary condition '$UBC' for U."\
+            "Valid options: 'pressureInletOutletVelocity', 'zeroGradient'."
+      ;;
+esac
+
+# Run from this directory
+cd "${0%/*}" || exit 1
+
+# Source tutorial run functions
+. "$WM_PROJECT_DIR/bin/tools/RunFunctions"
+
+runApplication blockMesh
+[ "$distort" ] && distort
+runApplication extrudeMesh
+
+[ "$pBC" ] && setAtmosphereBC p "$pBC"
+[ "$UBC" ] && setAtmosphereBC U "$UBC"
+
+runApplication "$(getApplication)"
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case oscillatingInlet (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+runApplication createNonConformalCouples -overwrite nonCouple1 nonCouple2
+
+runApplication $(getApplication)
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDailyLTS (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application="$(getApplication)"
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case TJunctionFan (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+
+# Create faceZones for baffles and fan
+runApplication topoSet
+
+# Create wall and cyclic baffles and the fields on them
+runApplication createBaffles -overwrite
+
+runApplication $application
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDaily (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application="$(getApplication)"
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wingMotion_snappyHexMesh (domain: incompressible, category: wingMotion, solver:pimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wingMotion2D_simpleFoam (domain: incompressible, category: wingMotion, solver:pimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wingMotion2D_pimpleFoam (domain: incompressible, category: wingMotion, solver:pimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case waveSubSurface (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setWaves
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+runApplication reconstructPar -newTimes
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case impeller (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+
+cd "${0%/*}" || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+runApplication createNonConformalCouples -overwrite
+
+runApplication $(getApplication)
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case propeller (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Mesh if necessary
+if ! cloneMesh ../../../../multiphase/interFoam/RAS/propeller .
+then
+    ./Allmesh
+else
+    runApplication decomposePar -noFields
+fi
+
+# Copy the fields into the processor directories
+runApplication -a decomposePar -fields -copyZero
+
+# Run
+runParallel $(getApplication)
+
+# Reconstruct
+runApplication reconstructParMesh -constant
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case TJunction (domain: incompressible, category: RAS, solver:pimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1 # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication topoSet
+runApplication $(getApplication)
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pipeCyclic (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application directory
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication topoSet
+runApplication refineHexMesh c0 -noFields -overwrite
+
+runApplication decomposePar -cellDist
+runParallel $application
+
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case turbineSiting (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication decomposePar -copyZero
+runParallel snappyHexMesh -overwrite
+
+runParallel topoSet
+runParallel $(getApplication)
+
+runApplication reconstructParMesh -constant
+runApplication reconstructPar -constant
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case roomResidenceTime (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication simpleFoam
+runApplication -s age simpleFoam -postProcess -latestTime \
+    -func "age(diffusion=true)"
+runApplication -s probes1 postProcess -func probes1 -latestTime
+runApplication -s probes2 postProcess -func probes2 -latestTime
+runApplication -s patchFlowRate postProcess -latestTime \
+    -func "patchFlowRate(funcName=inletFlowRate,patch=inlet)" -latestTime
+
+(cd validation && ./Allrun $*)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case airFoil2D (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case drivaerFastback (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+
+# Run from this directory
+cd "${0%/*}" || exit 1
+
+# Source tutorial run functions
+. "$WM_PROJECT_DIR/bin/tools/RunFunctions"
+
+usage () {
+    exec 1>&2
+    while [ "$#" -ge 1 ]; do echo "$1"; shift; done
+    cat <<USAGE
+
+Usage: ${0##*/} [OPTIONS]
+options:
+  -c | -cores <nCores>   number of cores in parallel run
+  -h | -help             help
+  -m | -mesh <S|M|L|XL>  mesh size
+                         - S: small, 440k cells
+                         - M: medium, 3M cells (default)
+                         - L: large, 22.5M cells
+                         - XL: extra large, ~200M cells
+
+Runs the ${PWD##*/} simulation
+
+USAGE
+    exit 1
+}
+
+checkCores () {
+    _cores="$1"
+
+    ! [ "$_cores" -eq "$_cores" ] 2> /dev/null && \
+        echo "Number of cores '$_cores' must be an integer" && \
+        return 1
+
+    [ "$_cores" -lt 2 ] && \
+        echo "Number of cores '$_cores' must be >= 2" && \
+        return 1
+
+    return 0
+}
+
+refineBackgroundMesh () {
+    _nRefine="$1"
+    _r=0
+    while [ $_r -lt "$_nRefine" ]
+    do
+        echo "Refining the background mesh"
+        runParallel -a refineMesh -overwrite
+        _r=$(( _r + 1 ))
+    done
+}
+
+setKeyword () {
+    _entry="$1"
+    _value="$2"
+    _file="$3"
+
+    foamDictionary -entry "$_entry" -set "$_value" "$_file" > /dev/null
+}
+
+nRefine=1
+nCores=8
+
+while [ "$#" -gt 0 ]
+do
+   case "$1" in
+   -c | -cores)
+      [ "$#" -ge 2 ] || usage "'$1' option requires an argument"
+      nCores=$2
+      shift 2
+      checkCores "$nCores" || usage
+      setKeyword numberOfSubdomains "$nCores" system/decomposeParDict
+      ;;
+   -h | -help)
+      usage
+      ;;
+   -m | -mesh)
+      [ "$#" -ge 2 ] || usage "'$1' option requires an argument"
+      mesh=$2
+      shift 2
+      case "$mesh" in
+          S)  nRefine=0 ;;
+          M)  ;;
+          L)  nRefine=2 ; setKeyword endTime 2000 system/controlDict ;;
+          XL) nRefine=3 ; setKeyword endTime 2000 system/controlDict ;;
+          *)  usage "Invalid argument '$mesh' to -m|-mesh <S|M|L|XL>." ;;
+      esac
+      ;;
+   -test)
+      shift
+      ;;
+   -*)
+      usage "Invalid option '$1'"
+      ;;
+   *)
+      break
+      ;;
+    esac
+done
+
+# START OF MAIN SCRIPT
+
+runApplication blockMesh
+
+runApplication decomposePar -copyZero
+
+refineBackgroundMesh $nRefine
+
+runParallel snappyHexMesh -overwrite
+
+runParallel checkMesh
+
+runParallel "$(getApplication)"
+
+# runApplication reconstructParMesh -constant
+# runApplication reconstructPar -latestTime
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDaily (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application="$(getApplication)"
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case motorBike (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Copy motorbike surface from resources directory
+cp $FOAM_TUTORIALS/resources/geometry/motorBike.obj.gz constant/geometry/
+runApplication surfaceFeatures
+
+runApplication blockMesh
+
+runApplication decomposePar -copyZero
+runParallel snappyHexMesh -overwrite
+
+runParallel patchSummary
+runParallel potentialFoam
+runParallel $(getApplication)
+
+runApplication reconstructParMesh -constant
+runApplication reconstructPar -latestTime
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case rotorDisk (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Meshing
+runApplication blockMesh
+runApplication surfaceFeatures
+runApplication snappyHexMesh -overwrite
+
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case mixerVessel2DMRF (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/mixerVessel2D
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case T3A (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication $application
+
+( cd validation && ./createGraphs )
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case ductSecondaryFlow (domain: incompressible, category: None, solver:simpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDailyExptInlet (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application="$(getApplication)"
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case windAroundBuildings (domain: incompressible, category: None, solver:simpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication surfaceFeatures
+
+runApplication blockMesh
+runApplication snappyHexMesh -overwrite
+
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case hotRoomBoussinesqSteady (domain: heatTransfer, category: None, solver:buoyantFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case hotRoomBoussinesq (domain: heatTransfer, category: None, solver:buoyantFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case comfortHotRoom (domain: heatTransfer, category: None, solver:buoyantFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication topoSet
+runApplication createPatch -overwrite
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case hotRoom (domain: heatTransfer, category: None, solver:buoyantFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case hotRadiationRoom (domain: heatTransfer, category: None, solver:buoyantFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case iglooWithFridges (domain: heatTransfer, category: None, solver:buoyantFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+# Serial
+runApplication snappyHexMesh -overwrite
+runApplication $(getApplication)
+
+## Parallel
+#runApplication decomposePar -fileHandler collated
+#runParallel snappyHexMesh -overwrite -fileHandler collated
+## Remove any include files from the field dictionaries
+#(   mkdir -p processors/0 && \
+#    cd 0 && \
+#    for f in *; do [ -f "$f" ] && \
+#    foamDictionary "$f" > "../processors/0/$f"; done \
+#)
+#
+#runParallel $(getApplication) -fileHandler collated
+#runApplication reconstructParMesh -constant
+#runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case buoyantCavity (domain: heatTransfer, category: None, solver:buoyantFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication $application
+runApplication -s sample  postProcess -latestTime -func sample
+
+runApplication validation/createGraphs
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case BernardCells (domain: heatTransfer, category: None, solver:buoyantFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case externalCoupledCavity (domain: heatTransfer, category: None, solver:buoyantFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+./Allmesh
+
+runApplication $(getApplication) &
+
+./externalSolver
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case circuitBoardCooling (domain: heatTransfer, category: None, solver:buoyantFoam):
+#!/bin/sh
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Mesh
+runApplication blockMesh
+
+# Create 1D and 3D baffles
+runApplication createBaffles -overwrite
+
+# Run
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case hotRadiationRoomFvDOM (domain: heatTransfer, category: None, solver:buoyantFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case coolingCylinder2D (domain: heatTransfer, category: None, solver:chtMultiRegionFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+runApplication topoSet
+
+runApplication splitMeshRegions -cellZones -defaultRegionName fluid -overwrite
+
+paraFoam -region fluid -touch
+paraFoam -region solid -touch
+
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case heatExchanger (domain: heatTransfer, category: None, solver:chtMultiRegionFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+./Allmesh
+
+runApplication $(getApplication)
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case heatedDuct (domain: heatTransfer, category: None, solver:chtMultiRegionFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+rm -rf constant/polyMesh/sets
+
+runApplication blockMesh
+runApplication snappyHexMesh -overwrite
+runApplication splitMeshRegions -cellZones -overwrite
+runApplication decomposePar -allRegions
+runParallel $(getApplication)
+runApplication reconstructPar -allRegions
+paraFoam -touchAll
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case reverseBurner (domain: heatTransfer, category: None, solver:chtMultiRegionFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+runApplication splitMeshRegions -cellZonesOnly -overwrite
+
+runApplication topoSet -region gas
+
+paraFoam -region gas -touch
+paraFoam -region solid -touch
+
+runApplication decomposePar -allRegions
+
+runParallel setFields -region gas
+
+runParallel $(getApplication)
+
+runApplication reconstructPar -allRegions -newTimes
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case coolingSphere (domain: heatTransfer, category: None, solver:chtMultiRegionFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+./Allmesh
+
+runApplication foamSetupCHT
+
+runApplication foamDictionary -entry internalField -set "uniform 348" 0/solid/T
+
+runApplication decomposePar -allRegions
+
+printf "\n%s\n" "Creating files for paraview post-processing"
+paraFoam -touchAll
+echo
+
+runParallel $(getApplication)
+
+runApplication reconstructPar -allRegions
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case templates (domain: heatTransfer, category: coolingSphere, solver:chtMultiRegionFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case shellAndTubeHeatExchanger (domain: heatTransfer, category: None, solver:chtMultiRegionFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+./Allmesh.layers
+
+runParallel $(getApplication)
+
+runApplication reconstructParMesh -allRegions -constant
+runApplication reconstructPar -allRegions
+
+paraFoam -touchAll
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case chargedWire (domain: electromagnetics, category: None, solver:electrostaticFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case hartmann (domain: electromagnetics, category: None, solver:mhdFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication $application
+runApplication -s sample  postProcess -func sample
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDaily (domain: compressible, category: LES, solver:rhoPimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application="$(getApplication)"
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case helmholtzResonance (domain: compressible, category: laminar, solver:rhoPimpleFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Run function links the appropriate mesh files and clones the case
+run()
+{
+    (
+        cd system
+        rm -f blockMeshDict.caseBlocks blockMeshDict.caseBoundary
+        ln -s blockMeshDict.${1}Blocks blockMeshDict.caseBlocks
+        ln -s blockMeshDict.${1}Boundary blockMeshDict.caseBoundary
+    )
+
+    cloneCase . ${1}
+
+    (
+        cd ${1}
+        runApplication blockMesh
+        runApplication decomposePar
+        runParallel $(getApplication)
+    )
+}
+
+# Run with a fully resolved plenum
+run resolved
+
+# Run with the plenum modelled by a boundary condition
+run modelled
+
+# Plot a comparison of the pressure in the neck
+cat << EOF | gnuplot -persist
+
+set terminal postscript eps size 5,4 enhanced color
+
+set xlabel "Time (s)"
+set ylabel "Gauge pressure in the neck (Pa)"
+
+set output "pressure.eps"
+
+plot \
+    "resolved/postProcessing/probes/0/p" us 1:(\$4-1e5) t "Resolved Plenum" w l, \
+    "modelled/postProcessing/probes/0/p" us 1:(\$4-1e5) t "Modelled Plenum" w l
+
+EOF
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case decompressionTank (domain: compressible, category: decompressionTank, solver:rhoPimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case shockTube (domain: compressible, category: laminar, solver:rhoPimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+runApplication -s sample  postProcess -func sample
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case blockedChannel (domain: compressible, category: laminar, solver:rhoPimpleFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication postProcess -func generateAlphas
+runApplication $(getApplication)
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case forwardStep (domain: compressible, category: laminar, solver:rhoPimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case angledDuct (domain: compressible, category: RAS, solver:rhoPimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/angledDuct
+runApplication $(getApplication)
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case squareBendLiq (domain: compressible, category: RAS, solver:rhoPimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case angledDuctLTS (domain: compressible, category: RAS, solver:rhoPimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/angledDuct
+runApplication $(getApplication)
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case nacaAirfoil (domain: compressible, category: RAS, solver:rhoPimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication star3ToFoam prostar/nacaAirfoil
+
+sed -i -e 's/symmetry\([)]*;\)/empty\1/' constant/polyMesh/boundary
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case prism (domain: compressible, category: RAS, solver:rhoPimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case annularThermalMixer (domain: compressible, category: RAS, solver:rhoPimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication surfaceFeatures
+
+runApplication blockMesh
+runApplication snappyHexMesh -overwrite
+
+runApplication createBaffles -overwrite
+runApplication splitBaffles -overwrite
+runApplication createNonConformalCouples -overwrite nonCouple1 nonCouple2
+
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cavity (domain: compressible, category: RAS, solver:rhoPimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case mixerVessel2DMRF (domain: compressible, category: RAS, solver:rhoPimpleFoam):
+#!/bin/sh
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/mixerVessel2D
+runApplication $application
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case aerofoilNACA0012 (domain: compressible, category: RAS, solver:rhoPimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Copy aerofoil surface from resources directory
+cp $FOAM_TUTORIALS/resources/geometry/NACA0012.obj.gz constant/geometry/
+
+application="$(getApplication)"
+
+runApplication blockMesh
+runApplication transformPoints "scale=(1 0 1)"
+runApplication extrudeMesh
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case obliqueShock (domain: compressible, category: None, solver:rhoCentralFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case movingCone (domain: compressible, category: None, solver:rhoCentralFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case shockTube (domain: compressible, category: None, solver:rhoCentralFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+runApplication -s sample  postProcess -func sample
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case LadenburgJet60psi (domain: compressible, category: None, solver:rhoCentralFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case forwardStep (domain: compressible, category: None, solver:rhoCentralFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case biconic25-55Run35 (domain: compressible, category: None, solver:rhoCentralFoam):
+#!/bin/sh
+cd "${0%/*}" || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. "$WM_PROJECT_DIR/bin/tools/RunFunctions"
+
+runApplication blockMesh
+
+runApplication datToFoam constant/grid256.dat
+
+points="constant/polyMesh/points"
+pointsTmp="constant/points.tmp"
+sed -i -e 's/binary/ascii/' -ne '1,17p' $points
+cat $pointsTmp >> $points
+rm $pointsTmp
+
+runApplication collapseEdges -overwrite
+
+echo "Changing patch type to wedge type in boundary file"
+sed -i '/wedge/,/nFaces/{s/patch/wedge/}' constant/polyMesh/boundary
+
+runApplication "$(getApplication)"
+
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wedge15Ma5 (domain: compressible, category: None, solver:rhoCentralFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case angledDuctExplicit (domain: compressible, category: None, solver:rhoPorousSimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/angledDuct
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case angledDuctImplicit (domain: compressible, category: None, solver:rhoPorousSimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/angledDuct
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case squareBendLiq (domain: compressible, category: None, solver:rhoSimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case angledDuctExplicitFixedCoeff (domain: compressible, category: None, solver:rhoSimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/angledDuct
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case squareBend (domain: compressible, category: None, solver:rhoSimpleFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case aerofoilNACA0012 (domain: compressible, category: None, solver:rhoSimpleFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Copy aerofoil surface from resources directory
+cp $FOAM_TUTORIALS/resources/geometry/NACA0012.obj.gz constant/geometry/
+
+application="$(getApplication)"
+
+runApplication blockMesh
+runApplication transformPoints "scale=(1 0 1)"
+runApplication extrudeMesh
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case kivaTest (domain: combustion, category: RAS, solver:XiFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication kivaToFoam -file otape17
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case moriyoshiHomogeneous (domain: combustion, category: RAS, solver:XiFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case smallPoolFire2D (domain: combustion, category: RAS, solver:buoyantReactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication topoSet
+runApplication createPatch -overwrite
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case smallPoolFire3D (domain: combustion, category: RAS, solver:buoyantReactingFoam):
+#!/bin/sh
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication topoSet
+runApplication createPatch -overwrite
+runApplication decomposePar -force
+runParallel $application
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cylinder (domain: combustion, category: Lagrangian, solver:buoyantReactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+./Allmesh
+
+application=$(getApplication)
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case rivuletPanel (domain: combustion, category: Lagrangian, solver:buoyantReactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+./Allmesh
+
+application=$(getApplication)
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case hotBoxes (domain: combustion, category: Lagrangian, solver:buoyantReactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+./Allmesh
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case splashPanel (domain: combustion, category: Lagrangian, solver:buoyantReactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication topoSet
+runApplication extrudeToRegionMesh -overwrite
+
+paraFoam -touchAll
+
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case counterFlowFlame2D_GRI_TDAC (domain: combustion, category: laminar, solver:reactingFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case counterFlowFlame2DLTS (domain: combustion, category: laminar, solver:reactingFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case counterFlowFlame2D (domain: combustion, category: laminar, solver:reactingFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case counterFlowFlame2DLTS_GRI_TDAC (domain: combustion, category: laminar, solver:reactingFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case counterFlowFlame2D_GRI (domain: combustion, category: laminar, solver:reactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case membrane (domain: combustion, category: RAS, solver:reactingFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication snappyHexMesh -overwrite
+runApplication createBaffles -overwrite
+
+runApplication setFields
+
+runApplication reactingFoam
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case DLR_A_LTS (domain: combustion, category: RAS, solver:reactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication chemkinToFoam \
+               chemkin/grimech30.dat chemkin/thermo30.dat chemkin/transportProperties \
+               constant/reactionsGRI constant/thermo.compressibleGasGRI
+
+runApplication blockMesh
+runApplication setFields
+runApplication decomposePar -force
+runParallel $application
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case SandiaD_LTS (domain: combustion, category: RAS, solver:reactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication chemkinToFoam \
+               chemkin/grimech30.dat chemkin/thermo30.dat chemkin/transportProperties \
+               constant/reactionsGRI constant/thermo.compressibleGasGRI
+
+runApplication blockMesh
+runApplication setFields
+
+if ! isTest $@
+then
+    # Run the application without chemistry until 1500 to let the flow develop
+    runApplication -a foamDictionary -entry "startTime" -set "0" system/controlDict
+    runApplication -a foamDictionary -entry "writeInterval" -set "1500" system/controlDict
+    runApplication -a foamDictionary -entry "endTime" -set "1500" system/controlDict
+    runApplication -a foamDictionary -entry "chemistry" -set "off" constant/chemistryProperties
+
+    runApplication $application
+
+    # Run with chemistry until flame reach its full size
+    runApplication -a foamDictionary -entry "startTime" -set "1500" system/controlDict
+    runApplication -a foamDictionary -entry "writeInterval" -set "100" system/controlDict
+    runApplication -a foamDictionary -entry "endTime" -set "5000" system/controlDict
+    runApplication -a foamDictionary -entry "chemistry" -set "on" constant/chemistryProperties
+fi
+
+runApplication -o $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case verticalChannelLTS (domain: combustion, category: Lagrangian, solver:reactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Create mesh
+runApplication blockMesh
+
+# Initialise with potentialFoam solution
+runApplication potentialFoam
+
+rm -f 0/phi
+
+# Run the solver
+runApplication $(getApplication)
+
+# Run post-processing
+runApplication steadyParticleTracks
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case aachenBomb (domain: combustion, category: Lagrangian, solver:reactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication chemkinToFoam \
+               chemkin/chem.inp chemkin/therm.dat chemkin/transportProperties \
+               constant/reactions constant/speciesThermo
+
+runApplication blockMesh
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case simplifiedSiwek (domain: combustion, category: Lagrangian, solver:reactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+# create mesh
+runApplication blockMesh
+
+# create ignition cells cellSet
+runApplication topoSet
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case verticalChannelSteady (domain: combustion, category: Lagrangian, solver:reactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+runApplication potentialFoam
+
+# remove incompatible (volumetric) flux field
+rm -f 0/phi
+
+runApplication $(getApplication)
+
+runApplication steadyParticleTracks
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case verticalChannel (domain: combustion, category: Lagrangian, solver:reactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Create mesh
+runApplication blockMesh
+
+# Initialise with potentialFoam solution
+runApplication potentialFoam
+
+rm -f 0/phi
+
+# Run the solver
+runApplication $(getApplication)
+
+# Run post-processing
+runApplication particleTracks
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case filter (domain: combustion, category: Lagrangian, solver:reactingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+# create mesh
+runApplication blockMesh
+
+# create sets
+runApplication topoSet
+
+# create baffles and fields
+runApplication createBaffles -overwrite
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case parcelInBox (domain: combustion, category: Lagrangian, solver:reactingFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case flamePropagationWithObstacles (domain: combustion, category: None, solver:PDRFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication topoSet
+
+runApplication PDRMesh -overwrite
+
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case gri (domain: combustion, category: None, solver:chemFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication chemkinToFoam \
+               chemkin/chem.inp chemkin/therm.dat chemkin/transportProperties \
+               constant/reactions constant/speciesThermo
+
+runApplication $application
+
+(cd validation && ./Allrun $*)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case ic8h18_TDAC (domain: combustion, category: None, solver:chemFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication chemkinToFoam \
+               chemkin/chem.inp chemkin/therm.dat chemkin/transportProperties \
+               constant/reactions constant/speciesThermo
+
+runApplication $application
+
+(cd validation && ./Allrun $*)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case h2 (domain: combustion, category: None, solver:chemFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication chemkinToFoam \
+               chemkin/chem.inp chemkin/therm.dat chemkin/transportProperties \
+               constant/reactions constant/speciesThermo
+
+runApplication $application
+
+(cd validation && ./Allrun $*)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case nc7h16 (domain: combustion, category: None, solver:chemFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication chemkinToFoam \
+               chemkin/chem.inp chemkin/therm.dat chemkin/transportProperties \
+               constant/reactions constant/speciesThermo
+
+runApplication $application
+
+(cd validation && ./Allrun $*)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case ic8h18 (domain: combustion, category: None, solver:chemFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication chemkinToFoam \
+               chemkin/chem.inp chemkin/therm.dat chemkin/transportProperties \
+               constant/reactions constant/speciesThermo
+
+runApplication $application
+
+(cd validation && ./Allrun $*)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case flange (domain: mesh, category: None, solver:foamyHexMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# copy flange surface from resources directory
+cp $FOAM_TUTORIALS/resources/geometry/flange.stl.gz constant/geometry/
+
+runApplication foamyHexMesh
+
+runApplication -s collapseFaces \
+    collapseEdges -latestTime -collapseFaces
+
+runApplication -s collapseFaceSet \
+    collapseEdges -latestTime -collapseFaceSet indirectPatchFaces
+
+runApplication checkMesh -latestTime -allGeometry -allTopology
+
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case simpleShapes (domain: mesh, category: None, solver:foamyHexMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication -s cone \
+    surfaceOrient constant/geometry/cone.stl \
+                  constant/geometry/cone_orient.stl \
+                  -inside '(0 -0.5 0)'
+
+runApplication -s sphere \
+    surfaceOrient constant/geometry/sphere.stl \
+                  constant/geometry/sphere_orient.stl \
+                  -inside '(0 -0.5 0)'
+
+runApplication \
+    surfaceBooleanFeatures \
+                  constant/geometry/cone_orient.stl \
+                  constant/geometry/sphere_orient.stl \
+                  intersection
+
+runApplication foamyHexMesh
+
+runApplication -s collapseFaceSet \
+    collapseEdges -latestTime -collapseFaceSet indirectPatchFaces
+
+runApplication -s collapseFaces \
+    collapseEdges -latestTime -collapseFaces
+
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case blob (domain: mesh, category: None, solver:foamyHexMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication foamyHexMesh
+
+runApplication -s collapseFaces \
+    collapseEdges -latestTime -collapseFaces
+
+runApplication -s collapseFaceSet \
+    collapseEdges -latestTime -collapseFaceSet indirectPatchFaces
+
+runApplication checkMesh -latestTime -allGeometry -allTopology
+
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case flange (domain: mesh, category: None, solver:snappyHexMesh):
+#!/bin/sh
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Copy flange surface from resources directory
+cp $FOAM_TUTORIALS/resources/geometry/flange.stl.gz constant/geometry/
+
+runApplication blockMesh
+runApplication surfaceFeatures
+runApplication snappyHexMesh -overwrite
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pipe (domain: mesh, category: None, solver:snappyHexMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Copy pipe surface from resources directory
+mkdir -p constant/geometry
+cp $FOAM_TUTORIALS/resources/geometry/pipe*.obj.gz constant/geometry/
+
+runApplication surfaceFeatures
+runApplication blockMesh
+runApplication snappyHexMesh -overwrite
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case refineFieldDirs (domain: mesh, category: None, solver:refineMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+wmake calcRadiusField
+wclean calcRadiusField
+
+runApplication blockMesh
+
+##### Procedure for special refinement over Z
+
+# We need the 0 folder to exist for these steps
+mkdir 0
+
+# Refine over Z, in 6 passes
+for index in 1 2 3 4 5 6; do
+
+  runApplication -s tier$index  calcRadiusField
+
+  runApplication -s tier$index \
+      topoSet -dict topoSetDict.tier$index
+
+  ## foamToVTK -cellSet tier$index
+
+  runApplication -s tier$index \
+      refineMesh -dict refineMeshDict.tier$index -overwrite
+
+  rm -r 0/*
+
+done
+
+# Refine over cylindrical coordinates, in 3 passes
+for index in 1 2 3; do
+
+  runApplication -s range$index  calcRadiusField -calcDirections
+
+  runApplication -s range$index \
+      topoSet -dict topoSetDict.range$index
+
+  ## foamToVTK -cellSet tier$index
+
+  runApplication -s range$index \
+      refineMesh -dict refineMeshDict.range$index -overwrite
+
+  rm -r 0/*
+
+done
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case jaggedBoundary (domain: mesh, category: None, solver:foamyQuadMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication surfaceFeatures
+runApplication foamyQuadMesh -overwrite
+runApplication extrude2DMesh -overwrite MeshedSurface
+runApplication checkMesh -allGeometry -allTopology -constant -noZero
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case square (domain: mesh, category: None, solver:foamyQuadMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication surfaceFeatures
+runApplication foamyQuadMesh -overwrite
+runApplication extrude2DMesh -overwrite polyMesh2D
+runApplication checkMesh -allGeometry -allTopology -constant -noZero
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case sphere7ProjectedEdges (domain: mesh, category: None, solver:blockMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case sphere7 (domain: mesh, category: None, solver:blockMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pipe (domain: mesh, category: None, solver:blockMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case sphere (domain: mesh, category: None, solver:blockMesh):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case SnakeRiverCanyon (domain: mesh, category: None, solver:moveDynamicMesh):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case freeSpaceStream (domain: discreteMethods, category: None, solver:dsmcFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication dsmcInitialise
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case freeSpacePeriodic (domain: discreteMethods, category: None, solver:dsmcFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication dsmcInitialise
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case supersonicCorner (domain: discreteMethods, category: None, solver:dsmcFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication decomposePar
+runParallel dsmcInitialise
+runParallel $(getApplication)
+runApplication reconstructPar -noLagrangian
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wedge15Ma5 (domain: discreteMethods, category: None, solver:dsmcFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication decomposePar
+runParallel dsmcInitialise
+runParallel $(getApplication)
+runApplication reconstructPar -noLagrangian
+
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case periodicCubeArgon (domain: molecularDynamics, category: None, solver:mdEquilibrationFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication mdInitialise
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case periodicCubeWater (domain: molecularDynamics, category: None, solver:mdEquilibrationFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication mdInitialise
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case nanoNozzle (domain: molecularDynamics, category: None, solver:mdFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+
+runApplication decomposePar
+
+runParallel mdInitialise
+runParallel $application
+
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case boxTurb16 (domain: DNS, category: None, solver:dnsFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication boxTurb
+runApplication $application
+runApplication -s enstrophy  postProcess -func enstrophy
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case nozzleFlow2D (domain: multiphase, category: LES, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+
+for i in 1 2
+do
+    runApplication -s $i \
+        topoSet -dict topoSetDict.${i}
+
+    runApplication -s $i \
+        refineMesh -dict refineMeshDict -overwrite
+done
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case sloshingTank3D (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/sloshingTank3D
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case mixerVessel2D (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/mixerVessel2D
+runApplication createBaffles -overwrite
+runApplication splitBaffles -overwrite
+runApplication createNonConformalCouples -overwrite nonCouple1 nonCouple2
+
+runApplication setFields
+
+runApplication $application
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case capillaryRise (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case sloshingTank3D6DoF (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/sloshingTank3D
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cavitatingBullet (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Generate the base block mesh
+runApplication blockMesh
+
+# Generate the snappy mesh
+runApplication snappyHexMesh -overwrite
+
+# Initialise with potentialFoam solution
+runApplication potentialFoam -pName p_rgh
+
+# Run the solver
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case climbingRod (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication extrudeMesh
+
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case sloshingTank2D (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/sloshingTank2D
+
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case sloshingTank2D3DoF (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/sloshingTank2D
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreak (domain: multiphase, category: damBreak, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wave (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+runApplication extrudeMesh
+
+for i in 1 2
+do
+    runApplication -s $i topoSet -dict topoSetDict$i
+    runApplication -s $i refineMesh -dict refineMeshDictX -overwrite
+done
+
+for i in 3 4 5 6
+do
+    runApplication -s $i topoSet -dict topoSetDict$i
+    runApplication -s $i refineMesh -dict refineMeshDictY -overwrite
+done
+
+runApplication setWaves
+
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+runApplication reconstructPar
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case sloshingTank3D3DoF (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/sloshingTank3D
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreakWithObstacle (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication topoSet
+runApplication subsetMesh -overwrite c0 -patch walls -noFields
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case sloshingCylinder (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication snappyHexMesh -overwrite
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case mixerVessel2DMRF (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/mixerVessel2D
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wave3D (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+for i in 1 2
+do
+    runApplication -s XY$i topoSet -dict topoSetDictXY$i
+    runApplication -s XY$i refineMesh -dict refineMeshDictXY -overwrite
+done
+
+for i in 1 2 3 4
+do
+    runApplication -s Z$i topoSet -dict topoSetDictZ$i
+    runApplication -s Z$i refineMesh -dict refineMeshDictZ -overwrite
+done
+
+runApplication setWaves
+
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+runApplication reconstructPar -newTimes
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case testTubeMixer (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case containerDischarge2D (domain: multiphase, category: laminar, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case mixerVessel (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+./Allmesh
+
+# Copy the fields into the processor directories
+runApplication -a decomposePar -fields -copyZero
+
+# Initialise alpha
+runParallel setFields
+
+# Run
+runParallel $(getApplication)
+
+# Reconstruct
+runApplication reconstructParMesh -constant
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case DTCHullMoving (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Mesh if necessary
+if ! cloneMesh ../DTCHull . && ! (isTest $@ && cloneMesh ../DTCHullWave .)
+then
+    ./Allmesh
+fi
+
+runApplication setFields
+
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case floatingObject (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication topoSet
+runApplication subsetMesh -overwrite c0 -patch floatingObject -noFields
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case DTCHull (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Mesh if necessary
+if ! cloneMesh ../DTCHullMoving . && ! (isTest $@ && cloneMesh ../DTCHullWave .)
+then
+    ./Allmesh
+fi
+
+runApplication setFields
+
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case waterChannel (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+./Allmesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case angledDuct (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/angledDuct
+runApplication $(getApplication)
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreakPorousBaffle (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+
+runApplication createBaffles -overwrite
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreak (domain: multiphase, category: damBreak, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case weirOverflow (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case planingHullW3 (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+
+usage () {
+    exec 1>&2
+    while [ "$#" -ge 1 ]; do echo "$1"; shift; done
+    cat <<USAGE
+Usage: ${0##*/} [OPTIONS]
+
+Options:
+  -i | -interface      no refinement in vertical direction of the mesh
+  -l | -local          mesh with local refinement
+  -h | -help           help
+
+Ship hull simulation to demonstrate two different meshing strategies that can be
+used with PLIC type schemes.
+
+USAGE
+    exit 1
+}
+
+meshType=0
+
+# OPTIONS
+while [ "$#" -gt 0 ]
+do
+    case "$1" in
+    -i | -interface)
+        meshType=1
+        break
+        ;;
+    -l | -local)
+        meshType=2
+        break
+        ;;
+    -h | -help)
+        usage
+        ;;
+    -test)
+        shift
+        ;;
+    -*)
+        usage "Invalid option '$1'"
+        ;;
+    *)
+        usage "Invalid option '$1'"
+        break
+        ;;
+    esac
+done
+
+
+# Run from this directory
+cd "${0%/*}" || exit 1
+
+# Source tutorial run functions
+. "$WM_PROJECT_DIR/bin/tools/RunFunctions"
+
+if [ $meshType -eq 0 ] || [ $meshType -eq 1 ]; then
+{
+    ./Allmesh.1
+}
+elif [$meshType -eq 2 ]; then
+{
+    ./Allmesh.2
+}
+fi
+
+runApplication setFields
+
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case DTCHullWave (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Mesh if necessary
+if ! isTest $@ || ! cloneMesh ../DTCHull . && ! cloneMesh ../DTCHullMoving .
+then
+    ./Allmesh
+fi
+
+runApplication setWaves
+
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case propeller (domain: multiphase, category: RAS, solver:interFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Mesh if necessary
+if ! cloneMesh ../../../incompressible/pimpleFoam/RAS/propeller .
+then
+    ./Allmesh
+else
+    runApplication decomposePar -noFields
+fi
+
+# Copy the fields into the processor directories
+runApplication -a decomposePar -fields -copyZero
+
+# Run
+runParallel $(getApplication)
+
+# Reconstruct
+runApplication reconstructParMesh -constant
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case lockExchange (domain: multiphase, category: None, solver:twoLiquidMixingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case tank3D (domain: multiphase, category: RAS, solver:driftFluxFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case dahl (domain: multiphase, category: RAS, solver:driftFluxFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case mixerVessel2DMRF (domain: multiphase, category: RAS, solver:driftFluxFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/mixerVessel2D
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case throttle (domain: multiphase, category: LES, solver:cavitatingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+refineMeshByCellSet()
+{
+   while [ $# -ge 1 ]
+   do
+      if [ ! -e log.refineMesh.$1 ]
+      then
+          echo "Creating cell set for primary zone - $1"
+          cp system/topoSetDict.$1 system/topoSetDict
+          topoSet > log.topoSet.$1 2>&1
+
+          echo "Refining primary zone - $1"
+          refineMesh -dict refineMeshDict -overwrite \
+              > log.refineMesh.$1 2>&1
+      fi
+      shift
+   done
+}
+
+runApplication blockMesh
+refineMeshByCellSet 1 2 3
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case throttle3D (domain: multiphase, category: LES, solver:cavitatingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+refineMeshByCellSet()
+{
+   while [ $# -ge 1 ]
+   do
+      if [ ! -e log.refineMesh.$1 ]
+      then
+          echo "Creating cell set for primary zone - $1"
+          cp system/topoSetDict.$1 system/topoSetDict
+          topoSet > log.topoSet.$1 2>&1
+
+          echo "Refining primary zone - $1"
+          refineMesh -dict refineMeshDict -overwrite \
+              > log.refineMesh.$1 2>&1
+      fi
+      shift
+   done
+}
+
+runApplication blockMesh
+refineMeshByCellSet 1 2 3
+
+#echo "mapping fields from 2D throttle case"
+#runApplication mapFields ../throttle -sourceTime latestTime
+
+runApplication decomposePar
+runParallel $application
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case throttle (domain: multiphase, category: RAS, solver:cavitatingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+refineMeshByCellSet()
+{
+   while [ $# -ge 1 ]
+   do
+      if [ ! -e log.refineMesh.$1 ]
+      then
+          echo "Creating cell set for primary zone - $1"
+          cp system/topoSetDict.$1 system/topoSetDict
+          topoSet > log.topoSet.$1 2>&1
+
+          echo "Refining primary zone - $1"
+          refineMesh -dict refineMeshDict -overwrite \
+              > log.refineMesh.$1 2>&1
+      fi
+      shift
+   done
+}
+
+runApplication blockMesh
+refineMeshByCellSet 1 2 3
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case oscillatingBox (domain: multiphase, category: None, solver:potentialFreeSurfaceFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication topoSet
+runApplication subsetMesh -overwrite c0 -patch floatingObject -noFields
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case movingOscillatingBox (domain: multiphase, category: None, solver:potentialFreeSurfaceFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+
+runApplication -s 1  topoSet
+
+runApplication subsetMesh -overwrite c0 -patch floatingObject -noFields
+
+runApplication -s selectBottom \
+    topoSet -dict topoSetDict-selectBottom
+
+runApplication createPatch -overwrite
+
+cp -R 0.orig 0 > /dev/null 2>&1
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreak4phase (domain: multiphase, category: laminar, solver:multiphaseInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreak4phaseFine (domain: multiphase, category: laminar, solver:multiphaseInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication decomposePar
+runParallel $application
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case mixerVessel2DMRF (domain: multiphase, category: laminar, solver:multiphaseInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/mixerVessel2D
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreak4phase (domain: multiphase, category: RAS, solver:multiphaseInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreak (domain: multiphase, category: laminar, solver:interMixingFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cylinder (domain: multiphase, category: laminar, solver:compressibleInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+./Allmesh
+
+application=$(getApplication)
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case climbingRod (domain: multiphase, category: laminar, solver:compressibleInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication extrudeMesh
+
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case sloshingTank2D (domain: multiphase, category: laminar, solver:compressibleInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/sloshingTank2D
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case plateFilm (domain: multiphase, category: laminar, solver:compressibleInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication topoSet
+runApplication extrudeToRegionMesh -overwrite
+
+runApplication setFields
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case depthCharge3D (domain: multiphase, category: laminar, solver:compressibleInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication decomposePar
+runParallel $(getApplication)
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case depthCharge2D (domain: multiphase, category: laminar, solver:compressibleInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case ballValve (domain: multiphase, category: RAS, solver:compressibleInterFoam):
+#!/bin/sh
+
+cd ${0%/*} || exit 1
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Copy torus surface from resources directory
+mkdir constant/geometry && cp $FOAM_TUTORIALS/resources/geometry/ballValve-torus.obj.gz constant/geometry
+
+# Mesh
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/ballValve
+
+# Create couples
+runApplication createNonConformalCouples -overwrite pipeNonCouple ballNonCouple
+
+# Decompose
+runApplication decomposePar -cellDist
+
+# Initialise the velocity field
+runParallel potentialFoam -pName p_rgh
+
+# Run
+runParallel $(getApplication);
+
+# Reconstruct
+runApplication reconstructPar -newTimes
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreak (domain: multiphase, category: RAS, solver:compressibleInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreak4phase (domain: multiphase, category: laminar, solver:compressibleMultiphaseInterFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case bubbleColumn (domain: multiphase, category: LES, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case mixerVessel2D (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/mixerVessel2D
+runApplication createBaffles -overwrite
+runApplication splitBaffles -overwrite
+runApplication createNonConformalCouples -overwrite nonCouple1 nonCouple2
+
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case steamInjection (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case bubbleColumnEvaporatingDissolving (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case bubbleColumnIATE (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case fluidisedBed (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case titaniaSynthesisSurface (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/titaniaSynthesis
+runApplication topoSet
+runApplication decomposePar
+runParallel    $application
+runApplication reconstructPar
+
+( cd validation && ./createGraphs )
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case injection (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case bubbleColumn (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case damBreak4phase (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication setFields
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case mixerVessel2DMRF (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/mixerVessel2D
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case titaniaSynthesis (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Set application name
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/titaniaSynthesis
+runApplication topoSet
+runApplication decomposePar
+runParallel    $application
+runApplication reconstructPar
+
+( cd validation && ./createGraphs )
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case bed (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case bubbleColumnEvaporating (domain: multiphase, category: laminar, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wallBoilingIATE (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication extrudeMesh
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+if ! isTest "$@"
+then
+    runApplication -a foamDictionary system/controlDict -entry endTime -set 4
+    runApplication -a foamDictionary system/controlDict -entry startTime -set 0.5
+    runParallel -a foamDictionary 0.5/T.liquid -entry boundaryField/wall/q -set "uniform 73890"
+    runParallel -a foamDictionary 0.5/U.liquid -entry boundaryField/inlet/type -set "fixedValue"
+    runParallel -a $(getApplication)
+fi
+
+runApplication reconstructPar -latestTime
+runApplication postProcess -latestTime -func "
+    graphCell
+    (
+        funcName=graph,
+        start=(3.4901 0 0),
+        end=(3.4901 0.0096 0),
+        fields=(alpha.gas T.liquid T.gas d.gas)
+    )"
+
+./validation/createGraphs
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case fluidisedBed (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication decomposePar
+runParallel $(getApplication)
+runApplication reconstructPar
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pipeBend (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Mesh
+runApplication blockMesh
+runApplication topoSet
+
+# Run
+runApplication decomposePar
+runParallel $(getApplication)
+runApplication reconstructPar -latestTime
+
+# Post-process
+runApplication postProcess -func "
+    graphLayerAverage
+    (
+        funcName=graphCrossSection,
+        patches=(inlet),
+        axis=distance,
+        d.particles
+    )
+    " -latestTime
+cd validation && ./createGraphs
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case LBend (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case bubblePipe (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+#!/bin/sh
+
+# Run from this directory
+cd "${0%/*}" || exit 1
+
+# Source run functions
+. "$WM_PROJECT_DIR/bin/tools/RunFunctions"
+
+# Run case
+runApplication blockMesh
+runApplication topoSet
+runApplication decomposePar
+runParallel    $(getApplication)
+runApplication reconstructPar
+
+( cd validation && ./createGraphs )
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wallBoiling (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication extrudeMesh
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+if ! isTest "$@"
+then
+    runApplication -a foamDictionary system/controlDict -entry endTime -set 4
+    runApplication -a foamDictionary system/controlDict -entry startTime -set 0.5
+    runParallel -a foamDictionary 0.5/T.liquid -entry boundaryField/wall/q -set "uniform 73890"
+    runParallel -a foamDictionary 0.5/U.liquid -entry boundaryField/inlet/type -set "fixedValue"
+    runParallel -a $(getApplication)
+fi
+
+runApplication reconstructPar -latestTime
+runApplication postProcess -latestTime -func "
+    graphCell
+    (
+        funcName=graph,
+        start=(3.4901 0 0),
+        end=(3.4901 0.0096 0),
+        fields=(alpha.gas T.liquid T.gas)
+    )"
+
+./validation/createGraphs
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wallBoilingPolydisperse (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication extrudeMesh
+runApplication topoSet
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+if ! isTest "$@"
+then
+    runApplication -a foamDictionary system/controlDict -entry endTime -set 4
+    runApplication -a foamDictionary system/controlDict -entry startTime -set 0.5
+    runParallel -a foamDictionary 0.5/T.liquid -entry boundaryField/wall/q -set "uniform 73890"
+    runParallel -a foamDictionary 0.5/U.liquid -entry boundaryField/inlet/type -set "fixedValue"
+    runParallel -a $(getApplication)
+fi
+
+runApplication reconstructPar -latestTime
+runApplication postProcess -latestTime -func "
+    graphCell
+    (
+        funcName=graph,
+        start=(3.4901 0 0),
+        end=(3.4901 0.0096 0),
+        fields=(alpha.gas T.liquid T.gas d.gas)
+    )"
+
+./validation/createGraphs
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case bubbleColumnEvaporatingReacting (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case bubbleColumn (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication setFields
+runApplication $(getApplication)
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case Grossetete (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=`getApplication`
+
+runApplication blockMesh
+runApplication extrudeMesh
+runApplication $application
+( cd validation && ./createGraphs )
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case wallBoilingPolydisperseTwoGroups (domain: multiphase, category: RAS, solver:multiphaseEulerFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+runApplication extrudeMesh
+runApplication topoSet
+runApplication decomposePar
+
+runParallel $(getApplication)
+
+if ! isTest "$@"
+then
+    runApplication -a foamDictionary system/controlDict -entry endTime -set 4
+    runApplication -a foamDictionary system/controlDict -entry startTime -set 0.5
+    runParallel -a foamDictionary 0.5/T.liquid -entry boundaryField/wall/q -set "uniform 73890"
+    runParallel -a foamDictionary 0.5/U.liquid -entry boundaryField/inlet/type -set "fixedValue"
+    runParallel -a $(getApplication)
+fi
+
+runApplication reconstructPar -latestTime
+runApplication postProcess -latestTime -func "
+    graphCell
+    (
+        funcName=graph,
+        start=(3.4901 0 0),
+        end=(3.4901 0.0096 0),
+        fields=(alpha.gas alpha.gas2 alpha.liquid T.liquid T.gas d.bubbles)
+    )"
+
+./validation/createGraphs
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case plateHole (domain: stressAnalysis, category: None, solver:solidDisplacementFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication $application
+runApplication -s sigma postProcess -func "components(sigma)"
+runApplication -s graphUniform postProcess -func graphUniform
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case beamEndLoad (domain: stressAnalysis, category: None, solver:solidEquilibriumDisplacementFoam):
+None
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case flange (domain: basic, category: None, solver:laplacianFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+# Get application name
+application=$(getApplication)
+
+runAnsysToFoam()
+{
+    if [ -f log.ansysToFoam ]
+    then
+        echo "ansysToFoam already run on $PWD: remove log file to re-run"
+    else
+        echo "Running ansysToFoam: converting mesh $1"
+        ansysToFoam $1 -scale $2 > log.ansysToFoam 2>&1
+    fi
+}
+
+runAnsysToFoam flange.ans 0.001
+runApplication $application
+runApplication foamToEnsight
+runApplication foamToEnsightParts
+runApplication foamToVTK
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case cylinder (domain: basic, category: None, solver:potentialFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh
+runApplication $application -withFunctionObjects -writePhi -writep
+runApplication postProcess -func streamFunction
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDaily (domain: basic, category: None, solver:potentialFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application=$(getApplication)
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+runApplication $application -writePhi -writep
+runApplication postProcess -func streamFunction
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case pitzDaily (domain: basic, category: None, solver:scalarTransportFoam):
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+application="$(getApplication)"
+
+runApplication blockMesh -dict $FOAM_TUTORIALS/resources/blockMesh/pitzDaily
+runApplication $application
+
+#------------------------------------------------------------------------------
+
+input_file_end.```
+
+```input_file_begin: linux execution command allrun file of case europeanCall (domain: financial, category: None, solver:financialFoam):
+None
+input_file_end.```
+

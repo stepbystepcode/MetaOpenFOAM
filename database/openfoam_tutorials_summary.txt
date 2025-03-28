@@ -1,0 +1,2233 @@
+Here is the list of tutorials in openfoam 10,
+###case begin:
+case name: mixerVessel2D
+case domain: lagrangian
+case category: None
+case solver: particleFoam
+case input name:['g', 'dynamicMeshDict', 'cloudProperties', 'physicalProperties', 'cloudPositions', 'momentumTransport', 'U', 'decomposeParDict', 'createBafflesDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'cloudProperties': 'constant', 'physicalProperties': 'constant', 'cloudPositions': 'constant', 'momentumTransport': 'constant', 'U': '0', 'decomposeParDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: hopperEmptying
+case domain: lagrangian
+case category: hopper
+case solver: particleFoam
+case input name:['g', 'cloudProperties', 'physicalProperties', 'momentumTransport', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'mapFieldsDict', 'U', 'rho', 'mu']
+corresponding input folder:{'g': 'constant', 'cloudProperties': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'mapFieldsDict': 'system', 'U': '0.orig', 'rho': '0.orig', 'mu': '0.orig'}
+case end.###
+
+###case begin:
+case name: hopperInitialState
+case domain: lagrangian
+case category: hopper
+case solver: particleFoam
+case input name:['g', 'cloudProperties', 'physicalProperties', 'cloudPositions', 'momentumTransport', 'U', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'cloudProperties': 'constant', 'physicalProperties': 'constant', 'cloudPositions': 'constant', 'momentumTransport': 'constant', 'U': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: Goldschmidt
+case domain: lagrangian
+case category: None
+case solver: denseParticleFoam
+case input name:['g', 'cloudProperties', 'momentumTransport.air', 'physicalProperties', 'cloudPositions', 'U.air', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'mapFieldsDict']
+corresponding input folder:{'g': 'constant', 'cloudProperties': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties': 'constant', 'cloudPositions': 'constant', 'U.air': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'mapFieldsDict': 'system'}
+case end.###
+
+###case begin:
+case name: column
+case domain: lagrangian
+case category: None
+case solver: denseParticleFoam
+case input name:['g', 'cloudProperties', 'momentumTransport.air', 'physicalProperties', 'cloudPositions', 'U.air', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'cloudProperties': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties': 'constant', 'cloudPositions': 'constant', 'U.air': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: GoldschmidtMPPIC
+case domain: lagrangian
+case category: None
+case solver: denseParticleFoam
+case input name:['g', 'cloudProperties', 'momentumTransport.air', 'physicalProperties', 'cloudPositions', 'U.air', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'cloudProperties': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties': 'constant', 'cloudPositions': 'constant', 'U.air': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: cyclone
+case domain: lagrangian
+case category: None
+case solver: denseParticleFoam
+case input name:['g', 'cloudProperties', 'momentumTransport.air', 'physicalProperties', 'k.air', 'U.air', 'nut.air', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'snappyHexMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'cloudProperties': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties': 'constant', 'k.air': '0', 'U.air': '0', 'nut.air': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: injectionChannel
+case domain: lagrangian
+case category: None
+case solver: denseParticleFoam
+case input name:['g', 'cloudProperties', 'momentumTransport.air', 'physicalProperties', 'U.air', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'cloudProperties': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties': 'constant', 'U.air': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDaily
+case domain: incompressible
+case category: None
+case solver: adjointShapeOptimisationFoam
+case input name:['physicalProperties', 'momentumTransport', 'Ua', 'epsilon', 'k', 'pa', 'nut', 'U', 'p', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'Ua': '0', 'epsilon': '0', 'k': '0', 'pa': '0', 'nut': '0', 'U': '0', 'p': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDaily
+case domain: incompressible
+case category: LES
+case solver: pisoFoam
+case input name:['physicalProperties', 'momentumTransport', 'k', 'nut', 's', 'U', 'nuTilda', 'p', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'nut': '0', 's': '0', 'U': '0', 'nuTilda': '0', 'p': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: motorBike
+case domain: incompressible
+case category: motorBike
+case solver: pisoFoam
+case input name:['physicalProperties', 'momentumTransport', 'k', 'nut', 'U', 'nuTilda', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'snappyHexMeshDict', 'forceCoeffs', 'controlDict', 'streamlines', 'fvSchemes', 'cuttingPlane']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'nut': '0', 'U': '0', 'nuTilda': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'snappyHexMeshDict': 'system', 'forceCoeffs': 'system', 'controlDict': 'system', 'streamlines': 'system', 'fvSchemes': 'system', 'cuttingPlane': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDailyMapped
+case domain: incompressible
+case category: LES
+case solver: pisoFoam
+case input name:['physicalProperties', 'momentumTransport', 'k', 'nut', 'U', 'nuTilda', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'nut': '0', 'U': '0', 'nuTilda': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: porousBlockage
+case domain: incompressible
+case category: laminar
+case solver: pisoFoam
+case input name:['coordinateSystems', 'fvModels', 'physicalProperties', 'momentumTransport', 'U', 'p', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'coordinateSystems': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'U': '0', 'p': '0', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: cavityCoupledU
+case domain: incompressible
+case category: RAS
+case solver: pisoFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'nuTilda', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'nuTilda': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: cavity
+case domain: incompressible
+case category: RAS
+case solver: pisoFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'omega', 'nuTilda', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'omega': '0', 'nuTilda': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: elbow
+case domain: incompressible
+case category: None
+case solver: icoFoam
+case input name:['physicalProperties', 'U', 'p', 'fvSolution', 'foamDataToFluentDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'U': '0', 'p': '0', 'fvSolution': 'system', 'foamDataToFluentDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: cavityClipped
+case domain: incompressible
+case category: cavity
+case solver: icoFoam
+case input name:['physicalProperties', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'mapFieldsDict']
+corresponding input folder:{'physicalProperties': 'constant', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'mapFieldsDict': 'system'}
+case end.###
+
+###case begin:
+case name: cavityGrade
+case domain: incompressible
+case category: cavity
+case solver: icoFoam
+case input name:['physicalProperties', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'mapFieldsDict']
+corresponding input folder:{'physicalProperties': 'constant', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'mapFieldsDict': 'system'}
+case end.###
+
+###case begin:
+case name: cavity
+case domain: incompressible
+case category: cavity
+case solver: icoFoam
+case input name:['physicalProperties', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: mixer
+case domain: incompressible
+case category: None
+case solver: SRFSimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'SRFProperties', 'epsilon', 'k', 'nut', 'Urel', 'omega', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'SRFProperties': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'Urel': '0', 'omega': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: rotor2D
+case domain: incompressible
+case category: None
+case solver: SRFPimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'SRFProperties', 'epsilon', 'k', 'nut', 'Urel', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'SRFProperties': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'Urel': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: squareBump
+case domain: incompressible
+case category: None
+case solver: shallowWaterFoam
+case input name:['gravitationalProperties', 'h0.orig', 'h.orig', 'hTotal', 'hU.orig', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'gravitationalProperties': 'constant', 'h0.orig': 'constant', 'h.orig': '0', 'hTotal': '0', 'hU.orig': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: straightDuctImplicit
+case domain: incompressible
+case category: None
+case solver: porousSimpleFoam
+case input name:['porosityProperties', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'meshDict.conformationSurfaces', 'decomposeParDict', 'foamyHexMeshDict', 'fvSolution', 'collapseDict.collapseFaces', 'surfaceFeaturesDict', 'meshDict.shapeControlFunctions', 'meshDict.geometry', 'controlDict', 'meshQualityDict', 'collapseDict.indirectPatchFaces', 'fvSchemes', 'collapseDict']
+corresponding input folder:{'porosityProperties': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'meshDict.conformationSurfaces': 'system', 'decomposeParDict': 'system', 'foamyHexMeshDict': 'system', 'fvSolution': 'system', 'collapseDict.collapseFaces': 'system', 'surfaceFeaturesDict': 'system', 'meshDict.shapeControlFunctions': 'system', 'meshDict.geometry': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'collapseDict.indirectPatchFaces': 'system', 'fvSchemes': 'system', 'collapseDict': 'system'}
+case end.###
+
+###case begin:
+case name: angledDuctExplicit
+case domain: incompressible
+case category: None
+case solver: porousSimpleFoam
+case input name:['fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: angledDuctImplicit
+case domain: incompressible
+case category: None
+case solver: porousSimpleFoam
+case input name:['porosityProperties', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'porosityProperties': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: boundaryWallFunctionsProfile
+case domain: incompressible
+case category: None
+case solver: boundaryFoam
+case input name:['physicalProperties', 'physicalProperties.template', 'momentumTransport', 'nut.spalding', 'epsilon', 'k', 'nut', 'U', 'nut.k', 'omega', 'nuTilda', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'physicalProperties.template': 'constant', 'momentumTransport': 'constant', 'nut.spalding': '0', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'nut.k': '0', 'omega': '0', 'nuTilda': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: boundaryWallFunctions
+case domain: incompressible
+case category: None
+case solver: boundaryFoam
+case input name:['gammaDot.xy', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'nu.xy', 'nuTilda', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'gammaDot.xy': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'nu.xy': '0', 'nuTilda': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: boundaryNonNewtonian
+case domain: incompressible
+case category: None
+case solver: boundaryFoam
+case input name:['physicalProperties', 'momentumTransport', 'U', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'U': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: boundaryLaunderSharma
+case domain: incompressible
+case category: None
+case solver: boundaryFoam
+case input name:['gammaDot.xy', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'nu.xy', 'nuTilda', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'gammaDot.xy': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'nu.xy': '0', 'nuTilda': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: channel395
+case domain: incompressible
+case category: LES
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'decomposeParDict', 'blockMeshDict', 'postChannelDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes', 'k', 'nut', 'U', 'nuTilda', 'p']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'postChannelDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'k': '0.orig', 'nut': '0.orig', 'U': '0.orig', 'nuTilda': '0.orig', 'p': '0.orig'}
+case end.###
+
+###case begin:
+case name: planarPoiseuille
+case domain: incompressible
+case category: laminar
+case solver: pimpleFoam
+case input name:['fvModels', 'physicalProperties', 'momentumTransport', 'sigma', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'createGraph']
+corresponding input folder:{'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'sigma': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraph': 'validation'}
+case end.###
+
+###case begin:
+case name: nonConformalChannel
+case domain: incompressible
+case category: laminar
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'U', 'p', 'blockMeshDict.internal', 'fvSolution', 'blockMeshDict.AMI', 'blockMeshDict.boundary', 'blockMeshDict.nonConformalCyclic', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'U': '0', 'p': '0', 'blockMeshDict.internal': 'system', 'fvSolution': 'system', 'blockMeshDict.AMI': 'system', 'blockMeshDict.boundary': 'system', 'blockMeshDict.nonConformalCyclic': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: planarCouette
+case domain: incompressible
+case category: laminar
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'sigma', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'sigma': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: movingCone
+case domain: incompressible
+case category: laminar
+case solver: pimpleFoam
+case input name:['dynamicMeshDict', 'physicalProperties', 'momentumTransport', 'pointMotionUx', 'U', 'p', 'decomposeParDict', 'blockMeshDict_0.0015', 'blockMeshDict', 'fvSolution', 'blockMeshDict_0.003', 'controlDict', 'decomposeParDict_0.003', 'decomposeParDict_0.0015', 'fvSchemes', 'cuttingPlane']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'pointMotionUx': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict_0.0015': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'blockMeshDict_0.003': 'system', 'controlDict': 'system', 'decomposeParDict_0.003': 'system', 'decomposeParDict_0.0015': 'system', 'fvSchemes': 'system', 'cuttingPlane': 'system'}
+case end.###
+
+###case begin:
+case name: blockedChannel
+case domain: incompressible
+case category: laminar
+case solver: pimpleFoam
+case input name:['fvModels', 'physicalProperties', 'momentumTransport', 'tracer', 'U', 'p', 'blockMeshDict', 'fvSolution', 'generateAlphas', 'controlDict', 'fvSchemes']
+corresponding input folder:{'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'tracer': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'generateAlphas': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDailyPulse
+case domain: incompressible
+case category: laminar
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'U', 'p', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'U': '0', 'p': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: planarContraction
+case domain: incompressible
+case category: laminar
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'sigma', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'sigma': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: offsetCylinder
+case domain: incompressible
+case category: laminar
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: ballValve
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['dynamicMeshDict', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 's', 'U', 'omega', 'p', 'decomposeParDict', 'topoSetDict', 'fvSolution', 'wallsSurface', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 's': '0', 'U': '0', 'omega': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'fvSolution': 'system', 'wallsSurface': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: elipsekkLOmega
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'nut', 'U', 'kt', 'kl', 'omega', 'p', 'createPatchDict', 'mirrorMeshDict.y', 'topoSetDict', 'mirrorMeshDict.x', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'nut': '0', 'U': '0', 'kt': '0', 'kl': '0', 'omega': '0', 'p': '0', 'createPatchDict': 'system', 'mirrorMeshDict.y': 'system', 'topoSetDict': 'system', 'mirrorMeshDict.x': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: flowWithOpenBoundary
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'k', 'T.orig', 'nut', 'U.orig', 'p.orig', 'omega', 'distortMesh.C', 'blockMeshDict', 'fvSolution', 'controlDict', 'extrudeMeshDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'T.orig': '0', 'nut': '0', 'U.orig': '0', 'p.orig': '0', 'omega': '0', 'distortMesh.C': 'distortMesh', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: oscillatingInlet
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['dynamicMeshDict', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'omega', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'omega': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDailyLTS
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'nuTilda', 'p', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'nuTilda': '0', 'p': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: TJunctionFan
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'U.orig', 'k.orig', 'p.orig', 'nuTilda.orig', 'epsilon.orig', 'nut.orig', 'topoSetDict', 'blockMeshDict', 'createBafflesDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'U.orig': '0', 'k.orig': '0', 'p.orig': '0', 'nuTilda.orig': '0', 'epsilon.orig': '0', 'nut.orig': '0', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDaily
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'nuTilda', 'p', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'nuTilda': '0', 'p': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: wingMotion_snappyHexMesh
+case domain: incompressible
+case category: wingMotion
+case solver: pimpleFoam
+case input name:['decomposeParDict', 'blockMeshDict', 'fvSolution', 'snappyHexMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: wingMotion2D_simpleFoam
+case domain: incompressible
+case category: wingMotion
+case solver: pimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'k', 'nut', 'U', 'omega', 'p', 'createPatchDict', 'fvSolution', 'controlDict', 'extrudeMeshDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'nut': '0', 'U': '0', 'omega': '0', 'p': '0', 'createPatchDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: wingMotion2D_pimpleFoam
+case domain: incompressible
+case category: wingMotion
+case solver: pimpleFoam
+case input name:['dynamicMeshDict', 'physicalProperties', 'momentumTransport', 'decomposeParDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'decomposeParDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: waveSubSurface
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['g', 'waveProperties', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'alpha.orig', 'nut', 'U.orig', 'p', 'decomposeParDict', 'setWavesDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'waveProperties': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'alpha.orig': '0', 'nut': '0', 'U.orig': '0', 'p': '0', 'decomposeParDict': 'system', 'setWavesDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: impeller
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['dynamicMeshDict', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'createNonConformalCouplesDict', 'fvSchemes']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'createNonConformalCouplesDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: propeller
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['dynamicMeshDict', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'p', 'decomposeParDict', 'surfaces', 'blockMeshDict', 'createBafflesDict', 'fvSolution', 'forces', 'surfaceFeaturesDict', 'snappyHexMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'surfaces': 'system', 'blockMeshDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'forces': 'system', 'surfaceFeaturesDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: TJunction
+case domain: incompressible
+case category: RAS
+case solver: pimpleFoam
+case input name:['cloudProperties', 'fvModels', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'nuTilda', 'p', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'cloudProperties': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'nuTilda': '0', 'p': '0', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pipeCyclic
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'p', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: turbineSiting
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['fvModels', 'physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'p', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'snappyHexMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: roomResidenceTime
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'p', 'probes1', 'blockMeshDict', 'fvSolution', 'controlDict', 'probes2', 'fvSchemes', 'measurement_Pos1', 'Allrun', 'plotPos2Data.gplt', 'measurement_Pos2', 'Allclean', 'plotPos1Data.gplt']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'p': '0', 'probes1': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'probes2': 'system', 'fvSchemes': 'system', 'measurement_Pos1': 'validation', 'Allrun': 'validation', 'plotPos2Data.gplt': 'validation', 'measurement_Pos2': 'validation', 'Allclean': 'validation', 'plotPos1Data.gplt': 'validation'}
+case end.###
+
+###case begin:
+case name: airFoil2D
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'nut', 'U', 'nuTilda', 'p', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'nut': '0', 'U': '0', 'nuTilda': '0', 'p': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: drivaerFastback
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'k', 'nut', 'U', 'omega', 'p', 'forceCoeffsIncompressible', 'blockMeshDict', 'fvSolution', 'controlDict.orig', 'meshQualityDict', 'snappyHexMeshDict.orig', 'fvSchemes', 'decomposeParDict.orig']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'nut': '0', 'U': '0', 'omega': '0', 'p': '0', 'forceCoeffsIncompressible': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict.orig': 'system', 'meshQualityDict': 'system', 'snappyHexMeshDict.orig': 'system', 'fvSchemes': 'system', 'decomposeParDict.orig': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDaily
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'v2', 'nut', 'U', 'f', 'omega', 'nuTilda', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'v2': '0', 'nut': '0', 'U': '0', 'f': '0', 'omega': '0', 'nuTilda': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: motorBike
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'k', 'nut', 'U.orig', 'omega', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'surfaceFeaturesDict', 'snappyHexMeshDict', 'forceCoeffs', 'controlDict', 'meshQualityDict', 'streamlines', 'fvSchemes', 'cuttingPlane']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'nut': '0', 'U.orig': '0', 'omega': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'snappyHexMeshDict': 'system', 'forceCoeffs': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'streamlines': 'system', 'fvSchemes': 'system', 'cuttingPlane': 'system'}
+case end.###
+
+###case begin:
+case name: rotorDisk
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['fvModels', 'physicalProperties', 'momentumTransport', 'k', 'nut', 'U', 'omega', 'p', 'blockMeshDict', 'fvSolution', 'surfaceFeaturesDict', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'nut': '0', 'U': '0', 'omega': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: mixerVessel2DMRF
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'MRFProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'p', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'MRFProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'p': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: T3A
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'k', 'nut', 'U', 'gammaInt', 'ReThetat', 'omega', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'nut': '0', 'U': '0', 'gammaInt': '0', 'ReThetat': '0', 'omega': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: ductSecondaryFlow
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'R', 'nut', 'U', 'p', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'R': '0', 'nut': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDailyExptInlet
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'nuTilda', 'p', 'decomposeParDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'nuTilda': '0', 'p': '0', 'decomposeParDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: windAroundBuildings
+case domain: incompressible
+case category: None
+case solver: simpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'U', 'p', 'blockMeshDict', 'fvSolution', 'surfaceFeaturesDict', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: hotRoomBoussinesqSteady
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T.orig', 'nut', 'p_rgh', 'U', 'p', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T.orig': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: hotRoomBoussinesq
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T.orig', 'nut', 'p_rgh', 'U', 'p', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T.orig': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: comfortHotRoom
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'physicalProperties', 'pRef', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'p_rgh', 'U', 'PPD', 'PMV', 'DR', 'p', 'createPatchDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'physicalProperties': 'constant', 'pRef': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'PPD': '0', 'PMV': '0', 'DR': '0', 'p': '0', 'createPatchDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: hotRoom
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'physicalProperties', 'pRef', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T.orig', 'nut', 'p_rgh', 'U', 'p', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'physicalProperties': 'constant', 'pRef': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T.orig': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: hotRadiationRoom
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'fvModels', 'physicalProperties', 'radiationProperties', 'pRef', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'G', 'nut', 'p_rgh', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'radiationProperties': 'constant', 'pRef': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'G': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: iglooWithFridges
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'p_rgh', 'U', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: buoyantCavity
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'physicalProperties', 'pRef', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'p_rgh', 'U', 'omega', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'sample', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'g': 'constant', 'physicalProperties': 'constant', 'pRef': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'omega': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'sample': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: BernardCells
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'p_rgh', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: externalCoupledCavity
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'physicalProperties', 'pRef', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'p_rgh', 'U', 'omega', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'physicalProperties': 'constant', 'pRef': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'omega': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: circuitBoardCooling
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'physicalProperties', 'pRef', 'momentumTransport', 'alphat.orig', 'T.orig', 'p_rgh.orig', 'U.orig', 'k.orig', 'p.orig', 'epsilon.orig', 'nut.orig', 'blockMeshDict', 'createBafflesDict', 'fvSolution', 'controlDict', 'fvSchemes', 'wallBafflePatches']
+corresponding input folder:{'g': 'constant', 'physicalProperties': 'constant', 'pRef': 'constant', 'momentumTransport': 'constant', 'alphat.orig': '0', 'T.orig': '0', 'p_rgh.orig': '0', 'U.orig': '0', 'k.orig': '0', 'p.orig': '0', 'epsilon.orig': '0', 'nut.orig': '0', 'blockMeshDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'wallBafflePatches': 'include'}
+case end.###
+
+###case begin:
+case name: hotRadiationRoomFvDOM
+case domain: heatTransfer
+case category: None
+case solver: buoyantFoam
+case input name:['g', 'fvModels', 'physicalProperties', 'radiationProperties', 'pRef', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'G', 'nut', 'p_rgh', 'U', 'IDefault', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'radiationProperties': 'constant', 'pRef': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'G': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'IDefault': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: coolingCylinder2D
+case domain: heatTransfer
+case category: None
+case solver: chtMultiRegionFoam
+case input name:['regionProperties', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'regionProperties': 'constant', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: heatExchanger
+case domain: heatTransfer
+case category: None
+case solver: chtMultiRegionFoam
+case input name:['regionProperties', 'decomposeParDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'regionProperties': 'constant', 'decomposeParDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: heatedDuct
+case domain: heatTransfer
+case category: None
+case solver: chtMultiRegionFoam
+case input name:['regionProperties', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'regionProperties': 'constant', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: reverseBurner
+case domain: heatTransfer
+case category: None
+case solver: chtMultiRegionFoam
+case input name:['regionProperties', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'regionProperties': 'constant', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: coolingSphere
+case domain: heatTransfer
+case category: None
+case solver: chtMultiRegionFoam
+case input name:['materialProperties', 'initialConditions', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'materialProperties': 'constant', 'initialConditions': 'constant', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: templates
+case domain: heatTransfer
+case category: coolingSphere
+case solver: chtMultiRegionFoam
+case input name:[]
+corresponding input folder:{}
+case end.###
+
+###case begin:
+case name: shellAndTubeHeatExchanger
+case domain: heatTransfer
+case category: None
+case solver: chtMultiRegionFoam
+case input name:['regionProperties', 'decomposeParDict', 'blockMeshDict', 'createBafflesDict', 'fvSolution', 'controlDict', 'meshQualityDict', 'snappyHexMeshDict.orig', 'fvSchemes']
+corresponding input folder:{'regionProperties': 'constant', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'snappyHexMeshDict.orig': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: chargedWire
+case domain: electromagnetics
+case category: None
+case solver: electrostaticFoam
+case input name:['physicalProperties', 'rho', 'phi', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'rho': '0', 'phi': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: hartmann
+case domain: electromagnetics
+case category: None
+case solver: mhdFoam
+case input name:['physicalProperties', 'Ux', 'pB', 'Uy', 'B', 'U', 'Uz', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'sample', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'Ux': '0', 'pB': '0', 'Uy': '0', 'B': '0', 'U': '0', 'Uz': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'sample': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDaily
+case domain: compressible
+case category: LES
+case solver: rhoPimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'alphat', 'k', 'T', 'muTilda', 'nut', 'U', 'p', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'k': '0', 'T': '0', 'muTilda': '0', 'nut': '0', 'U': '0', 'p': '0', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: helmholtzResonance
+case domain: compressible
+case category: laminar
+case solver: rhoPimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'T', 'U', 'p', 'decomposeParDict', 'blockMeshDict.modelledBoundary', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'blockMeshDict.resolvedBlocks', 'blockMeshDict.resolvedBoundary', 'controlDict', 'fvSchemes', 'blockMeshDict.modelledBlocks']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict.modelledBoundary': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'blockMeshDict.resolvedBlocks': 'system', 'blockMeshDict.resolvedBoundary': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'blockMeshDict.modelledBlocks': 'system'}
+case end.###
+
+###case begin:
+case name: decompressionTank
+case domain: compressible
+case category: decompressionTank
+case solver: rhoPimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'T', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: shockTube
+case domain: compressible
+case category: laminar
+case solver: rhoPimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'T.orig', 'U.orig', 'p.orig', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'sample', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T.orig': '0', 'U.orig': '0', 'p.orig': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'sample': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: blockedChannel
+case domain: compressible
+case category: laminar
+case solver: rhoPimpleFoam
+case input name:['physicalProperties.solid', 'thermophysicalTransport', 'fvModels', 'physicalProperties', 'momentumTransport', 'T', 'tracer', 'U', 'T.solid', 'p', 'blockMeshDict', 'fvSolution', 'generateAlphas', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties.solid': 'constant', 'thermophysicalTransport': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T': '0', 'tracer': '0', 'U': '0', 'T.solid': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'generateAlphas': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: forwardStep
+case domain: compressible
+case category: laminar
+case solver: rhoPimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'T', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: angledDuct
+case domain: compressible
+case category: RAS
+case solver: rhoPimpleFoam
+case input name:['fvModels', 'physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: squareBendLiq
+case domain: compressible
+case category: RAS
+case solver: rhoPimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: angledDuctLTS
+case domain: compressible
+case category: RAS
+case solver: rhoPimpleFoam
+case input name:['fvModels', 'physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: nacaAirfoil
+case domain: compressible
+case category: RAS
+case solver: rhoPimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: prism
+case domain: compressible
+case category: RAS
+case solver: rhoPimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: annularThermalMixer
+case domain: compressible
+case category: RAS
+case solver: rhoPimpleFoam
+case input name:['dynamicMeshDict', 'physicalProperties', 'boundaryConditions', 'caseSettings', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'blockMeshDict', 'createBafflesDict', 'fvSolution', 'fvConstraints', 'surfaceFeaturesDict', 'snappyHexMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'physicalProperties': 'constant', 'boundaryConditions': 'constant', 'caseSettings': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'surfaceFeaturesDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: cavity
+case domain: compressible
+case category: RAS
+case solver: rhoPimpleFoam
+case input name:['thermophysicalTransport', 'physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'omega', 'p', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'thermophysicalTransport': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'omega': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: mixerVessel2DMRF
+case domain: compressible
+case category: RAS
+case solver: rhoPimpleFoam
+case input name:['fvModels', 'physicalProperties', 'MRFProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'fvModels': 'constant', 'physicalProperties': 'constant', 'MRFProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: aerofoilNACA0012
+case domain: compressible
+case category: RAS
+case solver: rhoPimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'alphat', 'k', 'T', 'nut', 'U', 'omega', 'p', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'residuals', 'extrudeMeshDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'omega': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'residuals': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: obliqueShock
+case domain: compressible
+case category: None
+case solver: rhoCentralFoam
+case input name:['physicalProperties', 'momentumTransport', 'T', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: movingCone
+case domain: compressible
+case category: None
+case solver: rhoCentralFoam
+case input name:['dynamicMeshDict', 'physicalProperties', 'momentumTransport', 'pointMotionUx', 'T', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'cuttingPlane']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'pointMotionUx': '0', 'T': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'cuttingPlane': 'system'}
+case end.###
+
+###case begin:
+case name: shockTube
+case domain: compressible
+case category: None
+case solver: rhoCentralFoam
+case input name:['physicalProperties', 'momentumTransport', 'T.orig', 'U.orig', 'p.orig', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'sample', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T.orig': '0', 'U.orig': '0', 'p.orig': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'sample': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: LadenburgJet60psi
+case domain: compressible
+case category: None
+case solver: rhoCentralFoam
+case input name:['physicalProperties', 'momentumTransport', 'T', 'U', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'mapFieldsDict', 'T', 'U', 'p']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T': '0.orig', 'U': '0.orig', 'p': '0.orig', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'mapFieldsDict': 'system'}
+case end.###
+
+###case begin:
+case name: forwardStep
+case domain: compressible
+case category: None
+case solver: rhoCentralFoam
+case input name:['physicalProperties', 'momentumTransport', 'T', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: biconic25-55Run35
+case domain: compressible
+case category: None
+case solver: rhoCentralFoam
+case input name:['physicalProperties', 'grid256.dat', 'momentumTransport', 'T', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'sample', 'fvSchemes', 'collapseDict']
+corresponding input folder:{'physicalProperties': 'constant', 'grid256.dat': 'constant', 'momentumTransport': 'constant', 'T': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'sample': 'system', 'fvSchemes': 'system', 'collapseDict': 'system'}
+case end.###
+
+###case begin:
+case name: wedge15Ma5
+case domain: compressible
+case category: None
+case solver: rhoCentralFoam
+case input name:['physicalProperties', 'momentumTransport', 'T', 'U', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: angledDuctExplicit
+case domain: compressible
+case category: None
+case solver: rhoPorousSimpleFoam
+case input name:['fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: angledDuctImplicit
+case domain: compressible
+case category: None
+case solver: rhoPorousSimpleFoam
+case input name:['porosityProperties', 'physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'porosityProperties': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: squareBendLiq
+case domain: compressible
+case category: None
+case solver: rhoSimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: angledDuctExplicitFixedCoeff
+case domain: compressible
+case category: None
+case solver: rhoSimpleFoam
+case input name:['fvModels', 'physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: squareBend
+case domain: compressible
+case category: None
+case solver: rhoSimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: aerofoilNACA0012
+case domain: compressible
+case category: None
+case solver: rhoSimpleFoam
+case input name:['physicalProperties', 'momentumTransport', 'alphat', 'k', 'T', 'nut', 'U', 'omega', 'p', 'forceCoeffsCompressible', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'residuals', 'extrudeMeshDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'omega': '0', 'p': '0', 'forceCoeffsCompressible': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'residuals': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: kivaTest
+case domain: combustion
+case category: RAS
+case solver: XiFoam
+case input name:['dynamicMeshDict', 'combustionProperties', 'physicalProperties', 'momentumTransport', 'Xi', 'alphat', 'epsilon', 'Tu', 'k', 'T', 'ft', 'b', 'fu', 'nut', 'U', 'Su', 'p', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'combustionProperties': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'Xi': '-180', 'alphat': '-180', 'epsilon': '-180', 'Tu': '-180', 'k': '-180', 'T': '-180', 'ft': '-180', 'b': '-180', 'fu': '-180', 'nut': '-180', 'U': '-180', 'Su': '-180', 'p': '-180', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: moriyoshiHomogeneous
+case domain: combustion
+case category: RAS
+case solver: XiFoam
+case input name:['combustionProperties', 'physicalProperties.hydrogen', 'physicalProperties', 'combustionPropertiesInclude', 'combustionPropertiesInclude.hydrogen', 'momentumTransport', 'Xi', 'alphat', 'epsilon', 'Tu', 'k', 'T', 'ft', 'b', 'fu', 'nut', 'U', 'Su', 'p', 'blockMeshDict', 'fvSolution', 'controlDict.orig', 'fvSchemes']
+corresponding input folder:{'combustionProperties': 'constant', 'physicalProperties.hydrogen': 'constant', 'physicalProperties': 'constant', 'combustionPropertiesInclude': 'constant', 'combustionPropertiesInclude.hydrogen': 'constant', 'momentumTransport': 'constant', 'Xi': '0', 'alphat': '0', 'epsilon': '0', 'Tu': '0', 'k': '0', 'T': '0', 'ft': '0', 'b': '0', 'fu': '0', 'nut': '0', 'U': '0', 'Su': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict.orig': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: smallPoolFire2D
+case domain: combustion
+case category: RAS
+case solver: buoyantReactingFoam
+case input name:['reaction', 'g', 'combustionProperties', 'fvModels', 'physicalProperties', 'radiationProperties', 'hRef', 'pRef', 'thermo.compressibleGas', 'momentumTransport', 'alphat', 'k', 'soot', 'T', 'G', 'FSDomega', 'CH4', 'ph_rgh.orig', 'nut', 'p_rgh', 'U', 'Ydefault', 'N2', 'IDefault', 'O2', 'p', 'createPatchDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'reaction': 'constant', 'g': 'constant', 'combustionProperties': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'radiationProperties': 'constant', 'hRef': 'constant', 'pRef': 'constant', 'thermo.compressibleGas': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'k': '0', 'soot': '0', 'T': '0', 'G': '0', 'FSDomega': '0', 'CH4': '0', 'ph_rgh.orig': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'Ydefault': '0', 'N2': '0', 'IDefault': '0', 'O2': '0', 'p': '0', 'createPatchDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: smallPoolFire3D
+case domain: combustion
+case category: RAS
+case solver: buoyantReactingFoam
+case input name:['reaction', 'g', 'combustionProperties', 'fvModels', 'physicalProperties', 'radiationProperties', 'hRef', 'pRef', 'thermo.compressibleGas', 'momentumTransport', 'alphat', 'k', 'T', 'G', 'CH4', 'ph_rgh.orig', 'nut', 'p_rgh', 'U', 'Ydefault', 'N2', 'IDefault', 'O2', 'p', 'decomposeParDict', 'createPatchDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'reaction': 'constant', 'g': 'constant', 'combustionProperties': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'radiationProperties': 'constant', 'hRef': 'constant', 'pRef': 'constant', 'thermo.compressibleGas': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'k': '0', 'T': '0', 'G': '0', 'CH4': '0', 'ph_rgh.orig': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'Ydefault': '0', 'N2': '0', 'IDefault': '0', 'O2': '0', 'p': '0', 'decomposeParDict': 'system', 'createPatchDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: cylinder
+case domain: combustion
+case category: Lagrangian
+case solver: buoyantReactingFoam
+case input name:['g', 'speciesThermo', 'combustionProperties', 'cloudProperties', 'fvModels', 'surfaceFilmProperties', 'physicalProperties', 'parcelInjectionProperties', 'momentumTransport', 'T', 'p_rgh', 'U', 'N2', 'H2O', 'O2', 'p', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'extrudeToRegionMeshDict']
+corresponding input folder:{'g': 'constant', 'speciesThermo': 'constant', 'combustionProperties': 'constant', 'cloudProperties': 'constant', 'fvModels': 'constant', 'surfaceFilmProperties': 'constant', 'physicalProperties': 'constant', 'parcelInjectionProperties': 'constant', 'momentumTransport': 'constant', 'T': '0', 'p_rgh': '0', 'U': '0', 'N2': '0', 'H2O': '0', 'O2': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'extrudeToRegionMeshDict': 'system'}
+case end.###
+
+###case begin:
+case name: rivuletPanel
+case domain: combustion
+case category: Lagrangian
+case solver: buoyantReactingFoam
+case input name:['g', 'speciesThermo', 'combustionProperties', 'fvModels', 'surfaceFilmProperties', 'physicalProperties', 'momentumTransport', 'T', 'p_rgh', 'U', 'N2', 'H2O', 'O2', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'wallFilmRegion.topoSet', 'fvSchemes', 'extrudeToRegionMeshDict']
+corresponding input folder:{'g': 'constant', 'speciesThermo': 'constant', 'combustionProperties': 'constant', 'fvModels': 'constant', 'surfaceFilmProperties': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'T': '0', 'p_rgh': '0', 'U': '0', 'N2': '0', 'H2O': '0', 'O2': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'wallFilmRegion.topoSet': 'system', 'fvSchemes': 'system', 'extrudeToRegionMeshDict': 'system'}
+case end.###
+
+###case begin:
+case name: hotBoxes
+case domain: combustion
+case category: Lagrangian
+case solver: buoyantReactingFoam
+case input name:['g', 'speciesThermo', 'combustionProperties', 'cloudProperties', 'fvModels', 'surfaceFilmProperties', 'physicalProperties', 'momentumTransport', 'htcConv', 'alphat', 'epsilon', 'k', 'T', 'nut', 'p_rgh', 'U', 'N2', 'H2O', 'O2', 'p', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'topoSetDict.wallFilmRegion', 'controlDict', 'fvSchemes', 'extrudeToRegionMeshDict']
+corresponding input folder:{'g': 'constant', 'speciesThermo': 'constant', 'combustionProperties': 'constant', 'cloudProperties': 'constant', 'fvModels': 'constant', 'surfaceFilmProperties': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'htcConv': '0', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'N2': '0', 'H2O': '0', 'O2': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'topoSetDict.wallFilmRegion': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'extrudeToRegionMeshDict': 'system'}
+case end.###
+
+###case begin:
+case name: splashPanel
+case domain: combustion
+case category: Lagrangian
+case solver: buoyantReactingFoam
+case input name:['g', 'speciesThermo', 'combustionProperties', 'cloudProperties', 'fvModels', 'surfaceFilmProperties', 'physicalProperties', 'parcelInjectionProperties', 'momentumTransport', 'T', 'p_rgh', 'U', 'N2', 'H2O', 'O2', 'p', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'extrudeToRegionMeshDict']
+corresponding input folder:{'g': 'constant', 'speciesThermo': 'constant', 'combustionProperties': 'constant', 'cloudProperties': 'constant', 'fvModels': 'constant', 'surfaceFilmProperties': 'constant', 'physicalProperties': 'constant', 'parcelInjectionProperties': 'constant', 'momentumTransport': 'constant', 'T': '0', 'p_rgh': '0', 'U': '0', 'N2': '0', 'H2O': '0', 'O2': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'extrudeToRegionMeshDict': 'system'}
+case end.###
+
+###case begin:
+case name: counterFlowFlame2D_GRI_TDAC
+case domain: combustion
+case category: laminar
+case solver: reactingFoam
+case input name:['combustionProperties', 'reactionsGRI', 'physicalProperties', 'thermo.compressibleGasGRI', 'momentumTransport', 'chemistryProperties', 'alphat', 'T', 'CH4', 'CO2', 'U', 'Ydefault', 'N2', 'H2O', 'O2', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'combustionProperties': 'constant', 'reactionsGRI': 'constant', 'physicalProperties': 'constant', 'thermo.compressibleGasGRI': 'constant', 'momentumTransport': 'constant', 'chemistryProperties': 'constant', 'alphat': '0', 'T': '0', 'CH4': '0', 'CO2': '0', 'U': '0', 'Ydefault': '0', 'N2': '0', 'H2O': '0', 'O2': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: counterFlowFlame2DLTS
+case domain: combustion
+case category: laminar
+case solver: reactingFoam
+case input name:['combustionProperties', 'reactions', 'physicalProperties', 'thermo.compressibleGas', 'momentumTransport', 'chemistryProperties', 'alphat', 'T', 'CH4', 'CO2', 'U', 'Ydefault', 'N2', 'H2O', 'O2', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'combustionProperties': 'constant', 'reactions': 'constant', 'physicalProperties': 'constant', 'thermo.compressibleGas': 'constant', 'momentumTransport': 'constant', 'chemistryProperties': 'constant', 'alphat': '0', 'T': '0', 'CH4': '0', 'CO2': '0', 'U': '0', 'Ydefault': '0', 'N2': '0', 'H2O': '0', 'O2': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: counterFlowFlame2D
+case domain: combustion
+case category: laminar
+case solver: reactingFoam
+case input name:['combustionProperties', 'reactions', 'physicalProperties', 'thermo.compressibleGas', 'momentumTransport', 'chemistryProperties', 'alphat', 'T', 'CH4', 'CO2', 'U', 'Ydefault', 'N2', 'H2O', 'O2', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'combustionProperties': 'constant', 'reactions': 'constant', 'physicalProperties': 'constant', 'thermo.compressibleGas': 'constant', 'momentumTransport': 'constant', 'chemistryProperties': 'constant', 'alphat': '0', 'T': '0', 'CH4': '0', 'CO2': '0', 'U': '0', 'Ydefault': '0', 'N2': '0', 'H2O': '0', 'O2': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: counterFlowFlame2DLTS_GRI_TDAC
+case domain: combustion
+case category: laminar
+case solver: reactingFoam
+case input name:['combustionProperties', 'reactionsGRI', 'physicalProperties', 'thermo.compressibleGasGRI', 'momentumTransport', 'chemistryProperties', 'alphat', 'T', 'CH4', 'CO2', 'U', 'Ydefault', 'N2', 'H2O', 'O2', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'combustionProperties': 'constant', 'reactionsGRI': 'constant', 'physicalProperties': 'constant', 'thermo.compressibleGasGRI': 'constant', 'momentumTransport': 'constant', 'chemistryProperties': 'constant', 'alphat': '0', 'T': '0', 'CH4': '0', 'CO2': '0', 'U': '0', 'Ydefault': '0', 'N2': '0', 'H2O': '0', 'O2': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: counterFlowFlame2D_GRI
+case domain: combustion
+case category: laminar
+case solver: reactingFoam
+case input name:['dynamicMeshDict', 'combustionProperties', 'reactionsGRI', 'physicalProperties', 'thermo.compressibleGasGRI', 'momentumTransport', 'chemistryProperties', 'alphat', 'T', 'CH4', 'CO2', 'U', 'Ydefault', 'N2', 'H2O', 'O2', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'combustionProperties': 'constant', 'reactionsGRI': 'constant', 'physicalProperties': 'constant', 'thermo.compressibleGasGRI': 'constant', 'momentumTransport': 'constant', 'chemistryProperties': 'constant', 'alphat': '0', 'T': '0', 'CH4': '0', 'CO2': '0', 'U': '0', 'Ydefault': '0', 'N2': '0', 'H2O': '0', 'O2': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: membrane
+case domain: combustion
+case category: RAS
+case solver: reactingFoam
+case input name:['combustionProperties', 'physicalProperties', 'thermo.compressibleGas', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'O2.orig', 'nut', 'CH4.orig', 'U', 'Ydefault', 'N2.orig', 'include', 'p', 'blockMeshDict', 'createBafflesDict', 'fvSolution', 'setFieldsDict', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'combustionProperties': 'constant', 'physicalProperties': 'constant', 'thermo.compressibleGas': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'O2.orig': '0', 'nut': '0', 'CH4.orig': '0', 'U': '0', 'Ydefault': '0', 'N2.orig': '0', 'include': '0', 'p': '0', 'blockMeshDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: DLR_A_LTS
+case domain: combustion
+case category: RAS
+case solver: reactingFoam
+case input name:['grimech30.dat', 'transportProperties', 'thermo30.dat', 'g', 'combustionProperties', 'physicalProperties', 'thermo.compressibleGasGRI.orig', 'reactionsGRI.orig', 'momentumTransport', 'chemistryProperties', 'alphat', 'epsilon', 'k', 'T.orig', 'G', 'CH4', 'nut', 'U', 'Ydefault', 'N2', 'H2O', 'H2', 'O2', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'grimech30.dat': 'chemkin', 'transportProperties': 'chemkin', 'thermo30.dat': 'chemkin', 'g': 'constant', 'combustionProperties': 'constant', 'physicalProperties': 'constant', 'thermo.compressibleGasGRI.orig': 'constant', 'reactionsGRI.orig': 'constant', 'momentumTransport': 'constant', 'chemistryProperties': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T.orig': '0', 'G': '0', 'CH4': '0', 'nut': '0', 'U': '0', 'Ydefault': '0', 'N2': '0', 'H2O': '0', 'H2': '0', 'O2': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: SandiaD_LTS
+case domain: combustion
+case category: RAS
+case solver: reactingFoam
+case input name:['grimech30.dat', 'transportProperties', 'thermo30.dat', 'g', 'combustionProperties', 'fvModels', 'chemistryProperties.orig', 'physicalProperties', 'thermo.compressibleGasGRI.orig', 'radiationProperties', 'reactionsGRI.orig', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T.orig', 'G', 'H', 'O2.orig', 'nut', 'CH4.orig', 'O', 'CO2', 'U', 'Ydefault', 'N2.orig', 'H2O', 'CO', 'H2', 'OH', 'p', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict.orig', 'fvSchemes']
+corresponding input folder:{'grimech30.dat': 'chemkin', 'transportProperties': 'chemkin', 'thermo30.dat': 'chemkin', 'g': 'constant', 'combustionProperties': 'constant', 'fvModels': 'constant', 'chemistryProperties.orig': 'constant', 'physicalProperties': 'constant', 'thermo.compressibleGasGRI.orig': 'constant', 'radiationProperties': 'constant', 'reactionsGRI.orig': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T.orig': '0', 'G': '0', 'H': '0', 'O2.orig': '0', 'nut': '0', 'CH4.orig': '0', 'O': '0', 'CO2': '0', 'U': '0', 'Ydefault': '0', 'N2.orig': '0', 'H2O': '0', 'CO': '0', 'H2': '0', 'OH': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict.orig': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: verticalChannelLTS
+case domain: combustion
+case category: Lagrangian
+case solver: reactingFoam
+case input name:['g', 'speciesThermo', 'combustionProperties', 'cloudProperties', 'fvModels', 'physicalProperties', 'momentumTransport', 'alphat', 'k', 'T', 'air', 'nut', 'U.orig', 'H2O', 'omega', 'p', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'steadyParticleTracksDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'speciesThermo': 'constant', 'combustionProperties': 'constant', 'cloudProperties': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'k': '0', 'T': '0', 'air': '0', 'nut': '0', 'U.orig': '0', 'H2O': '0', 'omega': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'steadyParticleTracksDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: aachenBomb
+case domain: combustion
+case category: Lagrangian
+case solver: reactingFoam
+case input name:['transportProperties', 'chem.inp', 'therm.dat', 'g', 'combustionProperties', 'cloudProperties', 'fvModels', 'physicalProperties', 'momentumTransport', 'chemistryProperties', 'alphat', 'epsilon', 'k', 'T', 'nut', 'U', 'Ydefault', 'N2', 'Qdot', 'O2', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'transportProperties': 'chemkin', 'chem.inp': 'chemkin', 'therm.dat': 'chemkin', 'g': 'constant', 'combustionProperties': 'constant', 'cloudProperties': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'chemistryProperties': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'U': '0', 'Ydefault': '0', 'N2': '0', 'Qdot': '0', 'O2': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: simplifiedSiwek
+case domain: combustion
+case category: Lagrangian
+case solver: reactingFoam
+case input name:['coalCloudProperties', 'g', 'speciesThermo', 'combustionProperties', 'limestoneCloudProperties', 'fvModels', 'reactions', 'physicalProperties', 'limestoneCloudPositions', 'clouds', 'radiationProperties', 'momentumTransport', 'coalCloudPositions', 'chemistryProperties', 'alphat', 'epsilon', 'k', 'T', 'G', 'CH4', 'nut', 'CO2', 'U', 'N2', 'H2O', 'p.orig', 'CO', 'H2', 'O2', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'coalCloudProperties': 'constant', 'g': 'constant', 'speciesThermo': 'constant', 'combustionProperties': 'constant', 'limestoneCloudProperties': 'constant', 'fvModels': 'constant', 'reactions': 'constant', 'physicalProperties': 'constant', 'limestoneCloudPositions': 'constant', 'clouds': 'constant', 'radiationProperties': 'constant', 'momentumTransport': 'constant', 'coalCloudPositions': 'constant', 'chemistryProperties': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'G': '0', 'CH4': '0', 'nut': '0', 'CO2': '0', 'U': '0', 'N2': '0', 'H2O': '0', 'p.orig': '0', 'CO': '0', 'H2': '0', 'O2': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: verticalChannelSteady
+case domain: combustion
+case category: Lagrangian
+case solver: reactingFoam
+case input name:['g', 'speciesThermo', 'combustionProperties', 'cloudProperties', 'fvModels', 'fvConstraints', 'physicalProperties', 'momentumTransport', 'alphat', 'k', 'T', 'air', 'nut', 'U.orig', 'H2O', 'omega', 'p', 'blockMeshDict', 'fvSolution', 'steadyParticleTracksDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'speciesThermo': 'constant', 'combustionProperties': 'constant', 'cloudProperties': 'constant', 'fvModels': 'constant', 'fvConstraints': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'k': '0', 'T': '0', 'air': '0', 'nut': '0', 'U.orig': '0', 'H2O': '0', 'omega': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'steadyParticleTracksDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: verticalChannel
+case domain: combustion
+case category: Lagrangian
+case solver: reactingFoam
+case input name:['g', 'speciesThermo', 'combustionProperties', 'cloudProperties', 'fvModels', 'physicalProperties', 'momentumTransport', 'alphat', 'k', 'T', 'air', 'nut', 'U.orig', 'H2O', 'omega', 'p', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'particleTracksDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'speciesThermo': 'constant', 'combustionProperties': 'constant', 'cloudProperties': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'k': '0', 'T': '0', 'air': '0', 'nut': '0', 'U.orig': '0', 'H2O': '0', 'omega': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'particleTracksDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: filter
+case domain: combustion
+case category: Lagrangian
+case solver: reactingFoam
+case input name:['g', 'speciesThermo', 'combustionProperties', 'cloudProperties', 'fvModels', 'physicalProperties', 'parcelInjectionProperties', 'momentumTransport', 'alphat', 'epsilon', 'k', 'T', 'G', 'nut', 'U', 'N2', 'H2O', 'O2', 'p', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'createBafflesDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'speciesThermo': 'constant', 'combustionProperties': 'constant', 'cloudProperties': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'parcelInjectionProperties': 'constant', 'momentumTransport': 'constant', 'alphat': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'G': '0', 'nut': '0', 'U': '0', 'N2': '0', 'H2O': '0', 'O2': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: parcelInBox
+case domain: combustion
+case category: Lagrangian
+case solver: reactingFoam
+case input name:['g', 'speciesThermo', 'combustionProperties', 'cloudProperties', 'fvModels', 'physicalProperties', 'cloudPositions', 'momentumTransport', 'T', 'G', 'air', 'U', 'H2O', 'p', 'blockMeshDict', 'probesDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'speciesThermo': 'constant', 'combustionProperties': 'constant', 'cloudProperties': 'constant', 'fvModels': 'constant', 'physicalProperties': 'constant', 'cloudPositions': 'constant', 'momentumTransport': 'constant', 'T': '0', 'G': '0', 'air': '0', 'U': '0', 'H2O': '0', 'p': '0', 'blockMeshDict': 'system', 'probesDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: flamePropagationWithObstacles
+case domain: combustion
+case category: None
+case solver: PDRFoam
+case input name:['g', 'dynamicMeshDict', 'combustionProperties', 'physicalProperties', 'PDRProperties', 'momentumTransport', 'alphat.orig', 'betav.orig', 'nsv.orig', 'ft.orig', 'b.orig', 'T.orig', 'B.orig', 'CT.orig', 'Su.orig', 'Xi.orig', 'U.orig', 'k.orig', 'p.orig', 'Lobs.orig', 'epsilon.orig', 'Tu.orig', 'Aw.orig', 'Nv.orig', 'nut.orig', 'CR.orig', 'propane.dat', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'PDRMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'combustionProperties': 'constant', 'physicalProperties': 'constant', 'PDRProperties': 'constant', 'momentumTransport': 'constant', 'alphat.orig': '0', 'betav.orig': '0', 'nsv.orig': '0', 'ft.orig': '0', 'b.orig': '0', 'T.orig': '0', 'B.orig': '0', 'CT.orig': '0', 'Su.orig': '0', 'Xi.orig': '0', 'U.orig': '0', 'k.orig': '0', 'p.orig': '0', 'Lobs.orig': '0', 'epsilon.orig': '0', 'Tu.orig': '0', 'Aw.orig': '0', 'Nv.orig': '0', 'nut.orig': '0', 'CR.orig': '0', 'propane.dat': 'fuels', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'PDRMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: gri
+case domain: combustion
+case category: None
+case solver: chemFoam
+case input name:['senk.inp', 'senk.out', 'transportProperties', 'chem.inp', 'therm.dat', 'physicalProperties', 'initialConditions', 'chemistryProperties', 'fvSolution', 'controlDict', 'fvSchemes', 'createGraph', 'Allrun']
+corresponding input folder:{'senk.inp': 'chemkin', 'senk.out': 'chemkin', 'transportProperties': 'chemkin', 'chem.inp': 'chemkin', 'therm.dat': 'chemkin', 'physicalProperties': 'constant', 'initialConditions': 'constant', 'chemistryProperties': 'constant', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraph': 'validation', 'Allrun': 'validation'}
+case end.###
+
+###case begin:
+case name: ic8h18_TDAC
+case domain: combustion
+case category: None
+case solver: chemFoam
+case input name:['senk.inp', 'senk.out', 'transportProperties', 'chem.inp', 'therm.dat', 'physicalProperties', 'initialConditions', 'chemistryProperties', 'fvSolution', 'controlDict', 'fvSchemes', 'createGraph', 'Allrun']
+corresponding input folder:{'senk.inp': 'chemkin', 'senk.out': 'chemkin', 'transportProperties': 'chemkin', 'chem.inp': 'chemkin', 'therm.dat': 'chemkin', 'physicalProperties': 'constant', 'initialConditions': 'constant', 'chemistryProperties': 'constant', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraph': 'validation', 'Allrun': 'validation'}
+case end.###
+
+###case begin:
+case name: h2
+case domain: combustion
+case category: None
+case solver: chemFoam
+case input name:['senk.inp', 'senk.out', 'transportProperties', 'chem.inp', 'therm.dat', 'physicalProperties', 'initialConditions', 'chemistryProperties', 'fvSolution', 'controlDict', 'fvSchemes', 'createGraph', 'Allrun']
+corresponding input folder:{'senk.inp': 'chemkin', 'senk.out': 'chemkin', 'transportProperties': 'chemkin', 'chem.inp': 'chemkin', 'therm.dat': 'chemkin', 'physicalProperties': 'constant', 'initialConditions': 'constant', 'chemistryProperties': 'constant', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraph': 'validation', 'Allrun': 'validation'}
+case end.###
+
+###case begin:
+case name: nc7h16
+case domain: combustion
+case category: None
+case solver: chemFoam
+case input name:['senk.inp', 'senk.out', 'transportProperties', 'chem.inp', 'therm.dat', 'physicalProperties', 'initialConditions', 'chemistryProperties', 'fvSolution', 'controlDict', 'fvSchemes', 'createGraph', 'Allrun']
+corresponding input folder:{'senk.inp': 'chemkin', 'senk.out': 'chemkin', 'transportProperties': 'chemkin', 'chem.inp': 'chemkin', 'therm.dat': 'chemkin', 'physicalProperties': 'constant', 'initialConditions': 'constant', 'chemistryProperties': 'constant', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraph': 'validation', 'Allrun': 'validation'}
+case end.###
+
+###case begin:
+case name: ic8h18
+case domain: combustion
+case category: None
+case solver: chemFoam
+case input name:['senk.inp', 'senk.out', 'transportProperties', 'chem.inp', 'therm.dat', 'physicalProperties', 'initialConditions', 'chemistryProperties', 'fvSolution', 'controlDict', 'fvSchemes', 'createGraph', 'Allrun']
+corresponding input folder:{'senk.inp': 'chemkin', 'senk.out': 'chemkin', 'transportProperties': 'chemkin', 'chem.inp': 'chemkin', 'therm.dat': 'chemkin', 'physicalProperties': 'constant', 'initialConditions': 'constant', 'chemistryProperties': 'constant', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraph': 'validation', 'Allrun': 'validation'}
+case end.###
+
+###case begin:
+case name: flange
+case domain: mesh
+case category: None
+case solver: foamyHexMesh
+case input name:['decomposeParDict', 'topoSetDict-slices', 'foamyHexMeshDict', 'fvSolution', 'faceSetDict', 'meshDict.geometry', 'snappyHexMeshDict', 'controlDict', 'topoSetDict-background', 'meshQualityDict', 'fvSchemes', 'collapseDict']
+corresponding input folder:{'decomposeParDict': 'system', 'topoSetDict-slices': 'system', 'foamyHexMeshDict': 'system', 'fvSolution': 'system', 'faceSetDict': 'system', 'meshDict.geometry': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'topoSetDict-background': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system', 'collapseDict': 'system'}
+case end.###
+
+###case begin:
+case name: simpleShapes
+case domain: mesh
+case category: None
+case solver: foamyHexMesh
+case input name:['topoSetDict', 'foamyHexMeshDict', 'fvSolution', 'controlDict', 'meshQualityDict', 'fvSchemes', 'collapseDict']
+corresponding input folder:{'topoSetDict': 'system', 'foamyHexMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system', 'collapseDict': 'system'}
+case end.###
+
+###case begin:
+case name: blob
+case domain: mesh
+case category: None
+case solver: foamyHexMesh
+case input name:['decomposeParDict', 'topoSetDict', 'foamyHexMeshDict', 'fvSolution', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes', 'collapseDict']
+corresponding input folder:{'decomposeParDict': 'system', 'topoSetDict': 'system', 'foamyHexMeshDict': 'system', 'fvSolution': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system', 'collapseDict': 'system'}
+case end.###
+
+###case begin:
+case name: flange
+case domain: mesh
+case category: None
+case solver: snappyHexMesh
+case input name:['decomposeParDict', 'blockMeshDict', 'fvSolution', 'surfaceFeaturesDict', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pipe
+case domain: mesh
+case category: None
+case solver: snappyHexMesh
+case input name:['blockMeshDict', 'fvSolution', 'surfaceFeaturesDict', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'blockMeshDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: refineFieldDirs
+case domain: mesh
+case category: None
+case solver: refineMesh
+case input name:['calcRadiusField.C', 'refineMeshDict.range2', 'refineMeshDict.tier2', 'topoSetDict.tier4', 'refineMeshDict.tier6', 'refineMeshDict.tier3', 'blockMeshDict', 'fvSolution', 'topoSetDict.tier5', 'refineMeshDict.tier1', 'refineMeshDict.tier5', 'topoSetDict.tier1', 'topoSetDict.range2', 'topoSetDict.tier2', 'refineMeshDict.range3', 'refineMeshDict.range1', 'topoSetDict.range3', 'topoSetDict.tier6', 'controlDict', 'topoSetDict.range1', 'topoSetDict.tier3', 'fvSchemes', 'refineMeshDict.tier4']
+corresponding input folder:{'calcRadiusField.C': 'calcRadiusField', 'refineMeshDict.range2': 'system', 'refineMeshDict.tier2': 'system', 'topoSetDict.tier4': 'system', 'refineMeshDict.tier6': 'system', 'refineMeshDict.tier3': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'topoSetDict.tier5': 'system', 'refineMeshDict.tier1': 'system', 'refineMeshDict.tier5': 'system', 'topoSetDict.tier1': 'system', 'topoSetDict.range2': 'system', 'topoSetDict.tier2': 'system', 'refineMeshDict.range3': 'system', 'refineMeshDict.range1': 'system', 'topoSetDict.range3': 'system', 'topoSetDict.tier6': 'system', 'controlDict': 'system', 'topoSetDict.range1': 'system', 'topoSetDict.tier3': 'system', 'fvSchemes': 'system', 'refineMeshDict.tier4': 'system'}
+case end.###
+
+###case begin:
+case name: jaggedBoundary
+case domain: mesh
+case category: None
+case solver: foamyQuadMesh
+case input name:['foamyQuadMeshDict', 'fvSolution', 'surfaceFeaturesDict', 'extrude2DMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'foamyQuadMeshDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'extrude2DMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: square
+case domain: mesh
+case category: None
+case solver: foamyQuadMesh
+case input name:['foamyQuadMeshDict', 'fvSolution', 'surfaceFeaturesDict', 'extrude2DMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'foamyQuadMeshDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'extrude2DMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: sphere7ProjectedEdges
+case domain: mesh
+case category: None
+case solver: blockMesh
+case input name:['blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: sphere7
+case domain: mesh
+case category: None
+case solver: blockMesh
+case input name:['blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pipe
+case domain: mesh
+case category: None
+case solver: blockMesh
+case input name:['blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: sphere
+case domain: mesh
+case category: None
+case solver: blockMesh
+case input name:['blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: SnakeRiverCanyon
+case domain: mesh
+case category: None
+case solver: moveDynamicMesh
+case input name:['dynamicMeshDict', 'physicalProperties', 'pointDisplacement', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dynamicMeshDict': 'constant', 'physicalProperties': 'constant', 'pointDisplacement': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: freeSpaceStream
+case domain: discreteMethods
+case category: None
+case solver: dsmcFoam
+case input name:['dsmcProperties', 'rhoM', 'internalE', 'iDof', 'linearKE', 'momentum', 'q', 'fD', 'dsmcRhoN', 'boundaryU', 'rhoN', 'boundaryT', 'decomposeParDict', 'blockMeshDict', 'dsmcInitialiseDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dsmcProperties': 'constant', 'rhoM': '0', 'internalE': '0', 'iDof': '0', 'linearKE': '0', 'momentum': '0', 'q': '0', 'fD': '0', 'dsmcRhoN': '0', 'boundaryU': '0', 'rhoN': '0', 'boundaryT': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'dsmcInitialiseDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: freeSpacePeriodic
+case domain: discreteMethods
+case category: None
+case solver: dsmcFoam
+case input name:['dsmcProperties', 'rhoM', 'internalE', 'iDof', 'linearKE', 'momentum', 'q', 'fD', 'dsmcRhoN', 'boundaryU', 'rhoN', 'boundaryT', 'decomposeParDict', 'blockMeshDict', 'dsmcInitialiseDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dsmcProperties': 'constant', 'rhoM': '0', 'internalE': '0', 'iDof': '0', 'linearKE': '0', 'momentum': '0', 'q': '0', 'fD': '0', 'dsmcRhoN': '0', 'boundaryU': '0', 'rhoN': '0', 'boundaryT': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'dsmcInitialiseDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: supersonicCorner
+case domain: discreteMethods
+case category: None
+case solver: dsmcFoam
+case input name:['dsmcProperties', 'rhoM', 'internalE', 'iDof', 'linearKE', 'momentum', 'q', 'fD', 'dsmcRhoN', 'boundaryU', 'rhoN', 'boundaryT', 'decomposeParDict', 'blockMeshDict', 'dsmcInitialiseDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dsmcProperties': 'constant', 'rhoM': '0', 'internalE': '0', 'iDof': '0', 'linearKE': '0', 'momentum': '0', 'q': '0', 'fD': '0', 'dsmcRhoN': '0', 'boundaryU': '0', 'rhoN': '0', 'boundaryT': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'dsmcInitialiseDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: wedge15Ma5
+case domain: discreteMethods
+case category: None
+case solver: dsmcFoam
+case input name:['dsmcProperties', 'rhoM', 'internalE', 'iDof', 'linearKE', 'momentum', 'q', 'fD', 'dsmcRhoN', 'boundaryU', 'rhoN', 'boundaryT', 'decomposeParDict', 'blockMeshDict', 'dsmcInitialiseDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'dsmcProperties': 'constant', 'rhoM': '0', 'internalE': '0', 'iDof': '0', 'linearKE': '0', 'momentum': '0', 'q': '0', 'fD': '0', 'dsmcRhoN': '0', 'boundaryU': '0', 'rhoN': '0', 'boundaryT': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'dsmcInitialiseDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: periodicCubeArgon
+case domain: molecularDynamics
+case category: None
+case solver: mdEquilibrationFoam
+case input name:['moleculeProperties', 'U', 'decomposeParDict', 'mdEquilibrationDict', 'blockMeshDict', 'fvSolution', 'mdInitialiseDict', 'potentialDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'moleculeProperties': 'constant', 'U': '0', 'decomposeParDict': 'system', 'mdEquilibrationDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'mdInitialiseDict': 'system', 'potentialDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: periodicCubeWater
+case domain: molecularDynamics
+case category: None
+case solver: mdEquilibrationFoam
+case input name:['moleculeProperties', 'U', 'decomposeParDict', 'mdEquilibrationDict', 'blockMeshDict', 'fvSolution', 'mdInitialiseDict', 'potentialDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'moleculeProperties': 'constant', 'U': '0', 'decomposeParDict': 'system', 'mdEquilibrationDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'mdInitialiseDict': 'system', 'potentialDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: nanoNozzle
+case domain: molecularDynamics
+case category: None
+case solver: mdFoam
+case input name:['moleculeProperties', 'U', 'decomposeParDict', 'mdEquilibrationDict', 'blockMeshDict', 'fvSolution', 'mdInitialiseDict', 'potentialDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'moleculeProperties': 'constant', 'U': '0', 'decomposeParDict': 'system', 'mdEquilibrationDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'mdInitialiseDict': 'system', 'potentialDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: boxTurb16
+case domain: DNS
+case category: None
+case solver: dnsFoam
+case input name:['boxTurbDict', 'physicalProperties', 'momentumTransport', 'U.orig', 'p', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'boxTurbDict': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'U.orig': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: nozzleFlow2D
+case domain: multiphase
+case category: LES
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.air', 'momentumTransport', 'physicalProperties.fuel', 'alpha.fuel', 'k', 'nut', 'p_rgh', 'U', 'nuTilda', 'blockMeshDict', 'fvSolution', 'controlDict', 'topoSetDict.2', 'topoSetDict.1', 'fvSchemes', 'refineMeshDict']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'physicalProperties.fuel': 'constant', 'alpha.fuel': '0', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'nuTilda': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'topoSetDict.2': 'system', 'topoSetDict.1': 'system', 'fvSchemes': 'system', 'refineMeshDict': 'system'}
+case end.###
+
+###case begin:
+case name: sloshingTank3D
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: mixerVessel2D
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U', 'alpha.water.orig', 'createBafflesDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'createBafflesDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: capillaryRise
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U', 'alpha.water.orig', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: sloshingTank3D6DoF
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['6DoF.dat', 'g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'gen6DoF.C', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'6DoF.dat': 'constant', 'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'gen6DoF.C': 'gen6DoF', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: cavitatingBullet
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.vapour', 'phaseChangeProperties', 'momentumTransport', 'alpha.water', 'Phi', 'p_rgh.orig', 'U.orig', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'snappyHexMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.vapour': 'constant', 'phaseChangeProperties': 'constant', 'momentumTransport': 'constant', 'alpha.water': '0', 'Phi': '0', 'p_rgh.orig': '0', 'U.orig': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: climbingRod
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.liquid', 'fvModels', 'momentumTransport.air', 'momentumTransport.liquid', 'physicalProperties.air', 'momentumTransport', 'alpha.liquid.orig', 'sigma.liquid', 'p_rgh', 'U', 'p', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'extrudeMeshDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'fvModels': 'constant', 'momentumTransport.air': 'constant', 'momentumTransport.liquid': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'alpha.liquid.orig': '0', 'sigma.liquid': '0', 'p_rgh': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: sloshingTank2D
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: sloshingTank2D3DoF
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: damBreak
+case domain: multiphase
+case category: damBreak
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: wave
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'fvModels.verticalDamping', 'fvModels', 'physicalProperties.water', 'waveProperties', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U.orig', 'alpha.water.orig', 'decomposeParDict', 'topoSetDict4', 'setWavesDict', 'refineMeshDictX', 'blockMeshDict', 'topoSetDict2', 'fvSolution', 'topoSetDict1', 'refineMeshDictY', 'controlDict', 'topoSetDict3', 'topoSetDict6', 'extrudeMeshDict', 'fvSchemes', 'topoSetDict5']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'fvModels.verticalDamping': 'constant', 'fvModels': 'constant', 'physicalProperties.water': 'constant', 'waveProperties': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U.orig': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'topoSetDict4': 'system', 'setWavesDict': 'system', 'refineMeshDictX': 'system', 'blockMeshDict': 'system', 'topoSetDict2': 'system', 'fvSolution': 'system', 'topoSetDict1': 'system', 'refineMeshDictY': 'system', 'controlDict': 'system', 'topoSetDict3': 'system', 'topoSetDict6': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system', 'topoSetDict5': 'system'}
+case end.###
+
+###case begin:
+case name: sloshingTank3D3DoF
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: damBreakWithObstacle
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'k', 'nut', 'p_rgh', 'U.orig', 'alpha.water.orig', 'omega', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U.orig': '0', 'alpha.water.orig': '0', 'omega': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: sloshingCylinder
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U', 'alpha.water.orig', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: mixerVessel2DMRF
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'MRFProperties', 'physicalProperties.oil', 'momentumTransport', 'p_rgh', 'U', 'alpha.water.orig', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'MRFProperties': 'constant', 'physicalProperties.oil': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: wave3D
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'waveProperties', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U.orig', 'alpha.water.orig', 'decomposeParDict', 'topoSetDictZ3', 'setWavesDict', 'refineMeshDictXY', 'blockMeshDict', 'refineMeshDictZ', 'fvSolution', 'topoSetDictXY1', 'topoSetDictZ1', 'controlDict', 'topoSetDictZ2', 'topoSetDictXY2', 'topoSetDictZ4', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'waveProperties': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U.orig': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'topoSetDictZ3': 'system', 'setWavesDict': 'system', 'refineMeshDictXY': 'system', 'blockMeshDict': 'system', 'refineMeshDictZ': 'system', 'fvSolution': 'system', 'topoSetDictXY1': 'system', 'topoSetDictZ1': 'system', 'controlDict': 'system', 'topoSetDictZ2': 'system', 'topoSetDictXY2': 'system', 'topoSetDictZ4': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: testTubeMixer
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: containerDischarge2D
+case domain: multiphase
+case category: laminar
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.liquid', 'momentumTransport', 'physicalProperties.gas', 'alpha.liquid.orig', 'k', 'nut', 'p_rgh', 'U', 'omega', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'momentumTransport': 'constant', 'physicalProperties.gas': 'constant', 'alpha.liquid.orig': '0', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'omega': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: mixerVessel
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.oil', 'momentumTransport', 'epsilon', 'k', 'nut', 'alpha.oil.orig', 'p_rgh', 'U', 'decomposeParDict', 'blockMeshDict', 'createBafflesDict', 'fvSolution', 'surfaceFeaturesDict', 'setFieldsDict', 'snappyHexMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.oil': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'alpha.oil.orig': '0', 'p_rgh': '0', 'U': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'setFieldsDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: DTCHullMoving
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'dynamicMeshDict.sixDoF', 'hRef', 'physicalProperties.air', 'momentumTransport', 'omega.orig', 'pointDisplacement.orig', 'p_rgh.orig', 'U.orig', 'alpha.water.orig', 'k.orig', 'nut.orig', 'decomposeParDict', 'refineMeshDict.orig', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'surfaceFeaturesDict', 'setFieldsDict', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'dynamicMeshDict.sixDoF': 'constant', 'hRef': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'omega.orig': '0', 'pointDisplacement.orig': '0', 'p_rgh.orig': '0', 'U.orig': '0', 'alpha.water.orig': '0', 'k.orig': '0', 'nut.orig': '0', 'decomposeParDict': 'system', 'refineMeshDict.orig': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'setFieldsDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: floatingObject
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'dynamicMeshDict.sixDoF', 'physicalProperties.air', 'momentumTransport', 'epsilon', 'k', 'pointDisplacement', 'nut', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'controlDict.sixDoF', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'dynamicMeshDict.sixDoF': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'pointDisplacement': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'controlDict.sixDoF': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: DTCHull
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'hRef', 'physicalProperties.air', 'momentumTransport', 'omega.orig', 'pointDisplacement.orig', 'p_rgh.orig', 'U.orig', 'alpha.water.orig', 'k.orig', 'nut.orig', 'decomposeParDict', 'refineMeshDict.orig', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'surfaceFeaturesDict', 'setFieldsDict', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'hRef': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'omega.orig': '0', 'pointDisplacement.orig': '0', 'p_rgh.orig': '0', 'U.orig': '0', 'alpha.water.orig': '0', 'k.orig': '0', 'nut.orig': '0', 'decomposeParDict': 'system', 'refineMeshDict.orig': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'setFieldsDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: waterChannel
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'k', 'nut', 'p_rgh', 'U', 'alpha.water.orig', 'omega', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'extrudeMeshDict.2', 'controlDict', 'extrudeMeshDict.1', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'omega': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'extrudeMeshDict.2': 'system', 'controlDict': 'system', 'extrudeMeshDict.1': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: angledDuct
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'fvModels', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'alpha.water', 'epsilon', 'k', 'nut', 'p_rgh', 'U', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'fvModels': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'alpha.water': '0', 'epsilon': '0', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: damBreakPorousBaffle
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'p_rgh.orig', 'U.orig', 'alpha.water.orig', 'k.orig', 'nuTilda.orig', 'epsilon.orig', 'nut.orig', 'topoSetDict', 'blockMeshDict', 'createBafflesDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'p_rgh.orig': '0', 'U.orig': '0', 'alpha.water.orig': '0', 'k.orig': '0', 'nuTilda.orig': '0', 'epsilon.orig': '0', 'nut.orig': '0', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: damBreak
+case domain: multiphase
+case category: damBreak
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'fvModels', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'epsilon', 'k', 'nut', 'p_rgh', 'U', 'alpha.water.orig', 'omega', 'nuTilda', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'fvModels': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'omega': '0', 'nuTilda': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: weirOverflow
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'epsilon', 'k', 'nut', 'p_rgh', 'U', 'alpha.water.orig', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: planingHullW3
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'k', 'pointDisplacement', 'nut', 'p_rgh', 'U', 'alpha.water.orig', 'omega', 'decomposeParDict', 'snappyHexMeshDict.1', 'surfaces', 'blockMeshDict.1', 'blockMeshDict.2', 'fvSolution', 'snappyHexMeshDict.2', 'surfaceFeaturesDict', 'setFieldsDict', 'controlDict', 'topoSetDict.2', 'topoSetDict.1', 'meshQualityDict', 'fvSchemes', 'refineMeshDict']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'k': '0', 'pointDisplacement': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'omega': '0', 'decomposeParDict': 'system', 'snappyHexMeshDict.1': 'system', 'surfaces': 'system', 'blockMeshDict.1': 'system', 'blockMeshDict.2': 'system', 'fvSolution': 'system', 'snappyHexMeshDict.2': 'system', 'surfaceFeaturesDict': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'topoSetDict.2': 'system', 'topoSetDict.1': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system', 'refineMeshDict': 'system'}
+case end.###
+
+###case begin:
+case name: DTCHullWave
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'waveProperties', 'hRef', 'physicalProperties.air', 'momentumTransport', 'omega.orig', 'pointDisplacement.orig', 'p_rgh.orig', 'U.orig', 'alpha.water.orig', 'k.orig', 'nut.orig', 'decomposeParDict', 'refineMeshDict.orig', 'topoSetDict', 'setWavesDict', 'blockMeshDict', 'fvSolution', 'surfaceFeaturesDict', 'setFieldsDict', 'snappyHexMeshDict', 'controlDict', 'meshQualityDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'waveProperties': 'constant', 'hRef': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'omega.orig': '0', 'pointDisplacement.orig': '0', 'p_rgh.orig': '0', 'U.orig': '0', 'alpha.water.orig': '0', 'k.orig': '0', 'nut.orig': '0', 'decomposeParDict': 'system', 'refineMeshDict.orig': 'system', 'topoSetDict': 'system', 'setWavesDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'setFieldsDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'meshQualityDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: propeller
+case domain: multiphase
+case category: RAS
+case solver: interFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.vapour', 'phaseChangeProperties', 'momentumTransport', 'alpha.water', 'epsilon', 'k', 'nut', 'p_rgh', 'U', 'decomposeParDict', 'blockMeshDict', 'createBafflesDict', 'fvSolution', 'surfaceFeaturesDict', 'snappyHexMeshDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.vapour': 'constant', 'phaseChangeProperties': 'constant', 'momentumTransport': 'constant', 'alpha.water': '0', 'epsilon': '0', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'createBafflesDict': 'system', 'fvSolution': 'system', 'surfaceFeaturesDict': 'system', 'snappyHexMeshDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: lockExchange
+case domain: multiphase
+case category: None
+case solver: twoLiquidMixingFoam
+case input name:['physicalProperties.sludge', 'g', 'phaseProperties', 'physicalProperties.water', 'momentumTransport', 'alpha.sludge.orig', 'p_rgh', 'U', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties.sludge': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport': 'constant', 'alpha.sludge.orig': '0', 'p_rgh': '0', 'U': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: tank3D
+case domain: multiphase
+case category: RAS
+case solver: driftFluxFoam
+case input name:['physicalProperties.sludge', 'g', 'phaseProperties', 'physicalProperties.water', 'momentumTransport', 'epsilon', 'k', 'nut', 'p_rgh', 'U', 'alpha.sludge', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties.sludge': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'alpha.sludge': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: dahl
+case domain: multiphase
+case category: RAS
+case solver: driftFluxFoam
+case input name:['physicalProperties.sludge', 'g', 'phaseProperties', 'physicalProperties.water', 'momentumTransport', 'epsilon', 'k', 'nut', 'p_rgh', 'U', 'alpha.sludge', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties.sludge': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'alpha.sludge': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: mixerVessel2DMRF
+case domain: multiphase
+case category: RAS
+case solver: driftFluxFoam
+case input name:['physicalProperties.sludge', 'g', 'phaseProperties', 'physicalProperties.water', 'MRFProperties', 'momentumTransport', 'epsilon', 'k', 'nut', 'p_rgh', 'U', 'alpha.sludge', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties.sludge': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'MRFProperties': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'k': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'alpha.sludge': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: throttle
+case domain: multiphase
+case category: LES
+case solver: cavitatingFoam
+case input name:['phaseProperties', 'physicalProperties.water', 'physicalProperties.vapour', 'thermodynamicProperties', 'momentumTransport', 'k', 'alpha.vapour', 'nut', 'U', 'rho', 'p', 'blockMeshDict', 'fvSolution', 'topoSetDict.3', 'controlDict', 'topoSetDict.2', 'topoSetDict.1', 'fvSchemes', 'refineMeshDict']
+corresponding input folder:{'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.vapour': 'constant', 'thermodynamicProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'alpha.vapour': '0', 'nut': '0', 'U': '0', 'rho': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'topoSetDict.3': 'system', 'controlDict': 'system', 'topoSetDict.2': 'system', 'topoSetDict.1': 'system', 'fvSchemes': 'system', 'refineMeshDict': 'system'}
+case end.###
+
+###case begin:
+case name: throttle3D
+case domain: multiphase
+case category: LES
+case solver: cavitatingFoam
+case input name:['phaseProperties', 'physicalProperties.water', 'physicalProperties.vapour', 'thermodynamicProperties', 'momentumTransport', 'k', 'alpha.vapour', 'nut', 'U', 'rho', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'topoSetDict.3', 'controlDict', 'topoSetDict.2', 'topoSetDict.1', 'fvSchemes', 'refineMeshDict', 'mapFieldsDict']
+corresponding input folder:{'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.vapour': 'constant', 'thermodynamicProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'alpha.vapour': '0', 'nut': '0', 'U': '0', 'rho': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'topoSetDict.3': 'system', 'controlDict': 'system', 'topoSetDict.2': 'system', 'topoSetDict.1': 'system', 'fvSchemes': 'system', 'refineMeshDict': 'system', 'mapFieldsDict': 'system'}
+case end.###
+
+###case begin:
+case name: throttle
+case domain: multiphase
+case category: RAS
+case solver: cavitatingFoam
+case input name:['phaseProperties', 'physicalProperties.water', 'physicalProperties.vapour', 'thermodynamicProperties', 'momentumTransport', 'k', 'alpha.vapour', 'nut', 'U', 'rho', 'omega', 'p', 'blockMeshDict', 'fvSolution', 'topoSetDict.3', 'controlDict', 'topoSetDict.2', 'topoSetDict.1', 'fvSchemes', 'refineMeshDict']
+corresponding input folder:{'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.vapour': 'constant', 'thermodynamicProperties': 'constant', 'momentumTransport': 'constant', 'k': '0', 'alpha.vapour': '0', 'nut': '0', 'U': '0', 'rho': '0', 'omega': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'topoSetDict.3': 'system', 'controlDict': 'system', 'topoSetDict.2': 'system', 'topoSetDict.1': 'system', 'fvSchemes': 'system', 'refineMeshDict': 'system'}
+case end.###
+
+###case begin:
+case name: oscillatingBox
+case domain: multiphase
+case category: None
+case solver: potentialFreeSurfaceFoam
+case input name:['g', 'physicalProperties', 'momentumTransport', 'U', 'p_gh', 'p', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'U': '0', 'p_gh': '0', 'p': '0', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: movingOscillatingBox
+case domain: multiphase
+case category: None
+case solver: potentialFreeSurfaceFoam
+case input name:['g', 'dynamicMeshDict', 'physicalProperties', 'momentumTransport', 'createPatchDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'topoSetDict-selectBottom', 'controlDict', 'fvSchemes', 'pointDisplacement', 'U', 'p_gh', 'p']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'physicalProperties': 'constant', 'momentumTransport': 'constant', 'createPatchDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'topoSetDict-selectBottom': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'pointDisplacement': '0.orig', 'U': '0.orig', 'p_gh': '0.orig', 'p': '0.orig'}
+case end.###
+
+###case begin:
+case name: damBreak4phase
+case domain: multiphase
+case category: laminar
+case solver: multiphaseInterFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.mercury', 'physicalProperties.oil', 'physicalProperties.air', 'momentumTransport', 'alpha.mercury.orig', 'alpha.air.orig', 'alpha.oil.orig', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.mercury': 'constant', 'physicalProperties.oil': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'alpha.mercury.orig': '0', 'alpha.air.orig': '0', 'alpha.oil.orig': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: damBreak4phaseFine
+case domain: multiphase
+case category: laminar
+case solver: multiphaseInterFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.mercury', 'physicalProperties.oil', 'physicalProperties.air', 'momentumTransport', 'alpha.mercury.orig', 'alpha.air.orig', 'alpha.oil.orig', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.mercury': 'constant', 'physicalProperties.oil': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'alpha.mercury.orig': '0', 'alpha.air.orig': '0', 'alpha.oil.orig': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: mixerVessel2DMRF
+case domain: multiphase
+case category: laminar
+case solver: multiphaseInterFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.mercury', 'MRFProperties', 'physicalProperties.oil', 'physicalProperties.air', 'momentumTransport', 'alpha.mercury.orig', 'alpha.air.orig', 'alpha.oil.orig', 'p_rgh', 'U', 'alpha.water.orig', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.mercury': 'constant', 'MRFProperties': 'constant', 'physicalProperties.oil': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'alpha.mercury.orig': '0', 'alpha.air.orig': '0', 'alpha.oil.orig': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: damBreak4phase
+case domain: multiphase
+case category: RAS
+case solver: multiphaseInterFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.mercury', 'physicalProperties.oil', 'physicalProperties.air', 'momentumTransport', 'epsilon', 'alpha.mercury.orig', 'k', 'alpha.air.orig', 'nut', 'alpha.oil.orig', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.mercury': 'constant', 'physicalProperties.oil': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'epsilon': '0', 'alpha.mercury.orig': '0', 'k': '0', 'alpha.air.orig': '0', 'nut': '0', 'alpha.oil.orig': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: damBreak
+case domain: multiphase
+case category: laminar
+case solver: interMixingFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.other', 'physicalProperties.air', 'momentumTransport', 'alpha.air.orig', 'alpha.other.orig', 'p_rgh', 'U', 'alpha.water.orig', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.other': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'alpha.air.orig': '0', 'alpha.other.orig': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: cylinder
+case domain: multiphase
+case category: laminar
+case solver: compressibleInterFoam
+case input name:['g', 'speciesThermo', 'phaseProperties', 'combustionProperties', 'cloudProperties', 'physicalProperties.liquid', 'fvModels', 'surfaceFilmProperties', 'parcelInjectionProperties', 'physicalProperties.air', 'momentumTransport', 'T.air', 'T', 'alpha.liquid', 'p_rgh', 'U', 'T.liquid', 'p', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'extrudeToRegionMeshDict']
+corresponding input folder:{'g': 'constant', 'speciesThermo': 'constant', 'phaseProperties': 'constant', 'combustionProperties': 'constant', 'cloudProperties': 'constant', 'physicalProperties.liquid': 'constant', 'fvModels': 'constant', 'surfaceFilmProperties': 'constant', 'parcelInjectionProperties': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'T.air': '0', 'T': '0', 'alpha.liquid': '0', 'p_rgh': '0', 'U': '0', 'T.liquid': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'extrudeToRegionMeshDict': 'system'}
+case end.###
+
+###case begin:
+case name: climbingRod
+case domain: multiphase
+case category: laminar
+case solver: compressibleInterFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.liquid', 'fvModels', 'momentumTransport.air', 'momentumTransport.liquid', 'physicalProperties.air', 'momentumTransport', 'alpha.liquid.orig', 'sigma.liquid', 'T', 'p_rgh', 'U', 'p', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'extrudeMeshDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'fvModels': 'constant', 'momentumTransport.air': 'constant', 'momentumTransport.liquid': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'alpha.liquid.orig': '0', 'sigma.liquid': '0', 'T': '0', 'p_rgh': '0', 'U': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: sloshingTank2D
+case domain: multiphase
+case category: laminar
+case solver: compressibleInterFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'T.air', 'T', 'T.water', 'p_rgh', 'U', 'alpha.water.orig', 'p', 'decomposeParDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'T.air': '0', 'T': '0', 'T.water': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'p': '0', 'decomposeParDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: plateFilm
+case domain: multiphase
+case category: laminar
+case solver: compressibleInterFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.liquid', 'fvModels', 'surfaceFilmProperties', 'physicalProperties.air', 'momentumTransport', 'alpha.liquid.orig', 'T', 'p_rgh', 'U', 'p', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes', 'extrudeToRegionMeshDict']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'fvModels': 'constant', 'surfaceFilmProperties': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'alpha.liquid.orig': '0', 'T': '0', 'p_rgh': '0', 'U': '0', 'p': '0', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'extrudeToRegionMeshDict': 'system'}
+case end.###
+
+###case begin:
+case name: depthCharge3D
+case domain: multiphase
+case category: laminar
+case solver: compressibleInterFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'T.orig', 'U', 'p_rgh.orig', 'alpha.water.orig', 'p.orig', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'T.orig': '0', 'U': '0', 'p_rgh.orig': '0', 'alpha.water.orig': '0', 'p.orig': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: depthCharge2D
+case domain: multiphase
+case category: laminar
+case solver: compressibleInterFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'T.orig', 'U', 'p_rgh.orig', 'alpha.water.orig', 'p.orig', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'T.orig': '0', 'U': '0', 'p_rgh.orig': '0', 'alpha.water.orig': '0', 'p.orig': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: ballValve
+case domain: multiphase
+case category: RAS
+case solver: compressibleInterFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.vapour', 'phaseChangeProperties', 'momentumTransport', 'alpha.water', 'epsilon', 'k', 'T', 'Phi', 'nut', 'p_rgh', 'U', 'p', 'decomposeParDict', 'fvSolution', 'wallsSurface', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.vapour': 'constant', 'phaseChangeProperties': 'constant', 'momentumTransport': 'constant', 'alpha.water': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'Phi': '0', 'nut': '0', 'p_rgh': '0', 'U': '0', 'p': '0', 'decomposeParDict': 'system', 'fvSolution': 'system', 'wallsSurface': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: damBreak
+case domain: multiphase
+case category: RAS
+case solver: compressibleInterFoam
+case input name:['g', 'phaseProperties', 'fvModels', 'physicalProperties.water', 'physicalProperties.air', 'momentumTransport', 'T.air', 'epsilon', 'k', 'T', 'nut', 'T.water', 'p_rgh', 'U', 'alpha.water.orig', 'omega', 'nuTilda', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'fvModels': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'T.air': '0', 'epsilon': '0', 'k': '0', 'T': '0', 'nut': '0', 'T.water': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'omega': '0', 'nuTilda': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: damBreak4phase
+case domain: multiphase
+case category: laminar
+case solver: compressibleMultiphaseInterFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'physicalProperties.mercury', 'physicalProperties.oil', 'physicalProperties.air', 'momentumTransport', 'alpha.mercury.orig', 'T', 'alpha.air.orig', 'alpha.oil.orig', 'p_rgh', 'U', 'alpha.water.orig', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'physicalProperties.mercury': 'constant', 'physicalProperties.oil': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'alpha.mercury.orig': '0', 'T': '0', 'alpha.air.orig': '0', 'alpha.oil.orig': '0', 'p_rgh': '0', 'U': '0', 'alpha.water.orig': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: bubbleColumn
+case domain: multiphase
+case category: LES
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.air', 'physicalProperties.air', 'T.air', 'alphat.air', 'alpha.air.orig', 'k.air', 'U.air', 'k.water', 'T.water', 'p_rgh', 'nut.water', 'alpha.water.orig', 'alphat.water', 'epsilon.water', 'nut.air', 'epsilon.air', 'p', 'U.water', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.air': 'constant', 'T.air': '0', 'alphat.air': '0', 'alpha.air.orig': '0', 'k.air': '0', 'U.air': '0', 'k.water': '0', 'T.water': '0', 'p_rgh': '0', 'nut.water': '0', 'alpha.water.orig': '0', 'alphat.water': '0', 'epsilon.water': '0', 'nut.air': '0', 'epsilon.air': '0', 'p': '0', 'U.water': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: mixerVessel2D
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['g', 'dynamicMeshDict', 'phaseProperties', 'momentumTransport.oil', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.air', 'physicalProperties.mercury', 'physicalProperties.oil', 'momentumTransport.mercury', 'physicalProperties.air', 'T.air', 'alpha.water', 'alpha.mercury', 'U.mercury', 'alpha.oil', 'U.air', 'T.mercury', 'T.water', 'p_rgh', 'T.oil', 'U.oil', 'alpha.air', 'p', 'U.water', 'createBafflesDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'dynamicMeshDict': 'constant', 'phaseProperties': 'constant', 'momentumTransport.oil': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.mercury': 'constant', 'physicalProperties.oil': 'constant', 'momentumTransport.mercury': 'constant', 'physicalProperties.air': 'constant', 'T.air': '0', 'alpha.water': '0', 'alpha.mercury': '0', 'U.mercury': '0', 'alpha.oil': '0', 'U.air': '0', 'T.mercury': '0', 'T.water': '0', 'p_rgh': '0', 'T.oil': '0', 'U.oil': '0', 'alpha.air': '0', 'p': '0', 'U.water': '0', 'createBafflesDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: steamInjection
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'fvModels', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.steam', 'physicalProperties.steam', 'alpha.steam', 'alpha.water', 'U.steam', 'T.steam', 'T.water', 'p_rgh', 'water.water', 'nut.water', 'p', 'water.steam', 'U.water', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'fvModels': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.steam': 'constant', 'physicalProperties.steam': 'constant', 'alpha.steam': '0', 'alpha.water': '0', 'U.steam': '0', 'T.steam': '0', 'T.water': '0', 'p_rgh': '0', 'water.water': '0', 'nut.water': '0', 'p': '0', 'water.steam': '0', 'U.water': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: bubbleColumnEvaporatingDissolving
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.liquid', 'momentumTransport.liquid', 'physicalProperties.gas', 'momentumTransport.gas', 'alpha.liquid.orig', 'T.gas', 'water.gas', 'alpha.gas.orig', 'U.liquid', 'p_rgh', 'T.liquid', 'water.liquid', 'air.liquid', 'U.gas', 'air.gas', 'p', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'momentumTransport.liquid': 'constant', 'physicalProperties.gas': 'constant', 'momentumTransport.gas': 'constant', 'alpha.liquid.orig': '0', 'T.gas': '0', 'water.gas': '0', 'alpha.gas.orig': '0', 'U.liquid': '0', 'p_rgh': '0', 'T.liquid': '0', 'water.liquid': '0', 'air.liquid': '0', 'U.gas': '0', 'air.gas': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: bubbleColumnIATE
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.air', 'physicalProperties.air', 'T.air', 'alpha.air.orig', 'U.air', 'T.water', 'p_rgh', 'alpha.water.orig', 'kappai.air', 'p', 'U.water', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.air': 'constant', 'T.air': '0', 'alpha.air.orig': '0', 'U.air': '0', 'T.water': '0', 'p_rgh': '0', 'alpha.water.orig': '0', 'kappai.air': '0', 'p': '0', 'U.water': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: fluidisedBed
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.particles', 'momentumTransport.particles', 'momentumTransport.air', 'physicalProperties.air', 'T.air', 'alphat.particles', 'nut.particles', 'alpha.particles.orig', 'alpha.air.orig', 'k.air', 'U.air', 'Theta.particles', 'p_rgh', 'T.particles', 'nut.air', 'epsilon.air', 'U.particles', 'p', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.particles': 'constant', 'momentumTransport.particles': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.air': 'constant', 'T.air': '0', 'alphat.particles': '0', 'nut.particles': '0', 'alpha.particles.orig': '0', 'alpha.air.orig': '0', 'k.air': '0', 'U.air': '0', 'Theta.particles': '0', 'p_rgh': '0', 'T.particles': '0', 'nut.air': '0', 'epsilon.air': '0', 'U.particles': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: titaniaSynthesisSurface
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['chemistryProperties.vapor', 'combustionProperties.vapor', 'momentumTransport.vapor', 'g', 'phaseProperties', 'physicalProperties.particles', 'momentumTransport.particles', 'reactions.vapor', 'thermo.vapor', 'physicalProperties.vapor', 'f.particles', 'O2.vapor.orig', 'TiCl4.vapor.orig', 'alpha.particles.orig', 'T.vapor', 'U.vapor', 'TiO2.particles.orig', 'Ydefault.vapor.orig', 'p_rgh', 'T.particles', 'Ar.vapor.orig', 'U.particles', 'alpha.vapor.orig', 'Ydefault.particles.orig', 'p', 'decomposeParDict', 'topoSetDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'chemistryProperties.vapor': 'constant', 'combustionProperties.vapor': 'constant', 'momentumTransport.vapor': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.particles': 'constant', 'momentumTransport.particles': 'constant', 'reactions.vapor': 'constant', 'thermo.vapor': 'constant', 'physicalProperties.vapor': 'constant', 'f.particles': '0', 'O2.vapor.orig': '0', 'TiCl4.vapor.orig': '0', 'alpha.particles.orig': '0', 'T.vapor': '0', 'U.vapor': '0', 'TiO2.particles.orig': '0', 'Ydefault.vapor.orig': '0', 'p_rgh': '0', 'T.particles': '0', 'Ar.vapor.orig': '0', 'U.particles': '0', 'alpha.vapor.orig': '0', 'Ydefault.particles.orig': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: injection
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'fvModels', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.air', 'physicalProperties.air', 'T.air', 'alpha.air.orig', 'U.air', 'T.water', 'p_rgh', 'alpha.water.orig', 'p', 'U.water', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'fvModels': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.air': 'constant', 'T.air': '0', 'alpha.air.orig': '0', 'U.air': '0', 'T.water': '0', 'p_rgh': '0', 'alpha.water.orig': '0', 'p': '0', 'U.water': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: bubbleColumn
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.air', 'physicalProperties.air', 'T.air', 'alpha.air.orig', 'U.air', 'T.water', 'p_rgh', 'alpha.water.orig', 'p', 'U.water', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.air': 'constant', 'T.air': '0', 'alpha.air.orig': '0', 'U.air': '0', 'T.water': '0', 'p_rgh': '0', 'alpha.water.orig': '0', 'p': '0', 'U.water': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: damBreak4phase
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'momentumTransport.oil', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.air', 'physicalProperties.mercury', 'physicalProperties.oil', 'momentumTransport.mercury', 'physicalProperties.air', 'momentumTransport', 'T.air', 'U.mercury', 'alpha.mercury.orig', 'alpha.air.orig', 'U.air', 'T.mercury', 'T.water', 'alpha.oil.orig', 'p_rgh', 'U', 'T.oil', 'alpha.water.orig', 'U.oil', 'p', 'U.water', 'decomposeParDict', 'fineBlockMeshDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'momentumTransport.oil': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.mercury': 'constant', 'physicalProperties.oil': 'constant', 'momentumTransport.mercury': 'constant', 'physicalProperties.air': 'constant', 'momentumTransport': 'constant', 'T.air': '0', 'U.mercury': '0', 'alpha.mercury.orig': '0', 'alpha.air.orig': '0', 'U.air': '0', 'T.mercury': '0', 'T.water': '0', 'alpha.oil.orig': '0', 'p_rgh': '0', 'U': '0', 'T.oil': '0', 'alpha.water.orig': '0', 'U.oil': '0', 'p': '0', 'U.water': '0', 'decomposeParDict': 'system', 'fineBlockMeshDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: mixerVessel2DMRF
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'momentumTransport.oil', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.air', 'physicalProperties.mercury', 'MRFProperties', 'physicalProperties.oil', 'momentumTransport.mercury', 'physicalProperties.air', 'T.air', 'alpha.water', 'alpha.mercury', 'U.mercury', 'alpha.oil', 'U.air', 'T.mercury', 'T.water', 'p_rgh', 'T.oil', 'U.oil', 'alpha.air', 'p', 'U.water', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'momentumTransport.oil': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.mercury': 'constant', 'MRFProperties': 'constant', 'physicalProperties.oil': 'constant', 'momentumTransport.mercury': 'constant', 'physicalProperties.air': 'constant', 'T.air': '0', 'alpha.water': '0', 'alpha.mercury': '0', 'U.mercury': '0', 'alpha.oil': '0', 'U.air': '0', 'T.mercury': '0', 'T.water': '0', 'p_rgh': '0', 'T.oil': '0', 'U.oil': '0', 'alpha.air': '0', 'p': '0', 'U.water': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: titaniaSynthesis
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['chemistryProperties.vapor', 'combustionProperties.vapor', 'momentumTransport.vapor', 'g', 'phaseProperties', 'physicalProperties.particles', 'momentumTransport.particles', 'reactions.vapor', 'thermo.vapor', 'physicalProperties.vapor', 'Cl2.vapor.orig', 'f.particles', 'O2.vapor.orig', 'N2.vapor.orig', 'TiCl4.vapor.orig', 'TiO2.vapor.orig', 'alpha.particles.orig', 'T.vapor', 'U.vapor', 'TiO2.particles.orig', 'p_rgh', 'T.particles', 'Ar.vapor.orig', 'U.particles', 'alpha.vapor.orig', 'p', 'decomposeParDict', 'topoSetDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'chemistryProperties.vapor': 'constant', 'combustionProperties.vapor': 'constant', 'momentumTransport.vapor': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.particles': 'constant', 'momentumTransport.particles': 'constant', 'reactions.vapor': 'constant', 'thermo.vapor': 'constant', 'physicalProperties.vapor': 'constant', 'Cl2.vapor.orig': '0', 'f.particles': '0', 'O2.vapor.orig': '0', 'N2.vapor.orig': '0', 'TiCl4.vapor.orig': '0', 'TiO2.vapor.orig': '0', 'alpha.particles.orig': '0', 'T.vapor': '0', 'U.vapor': '0', 'TiO2.particles.orig': '0', 'p_rgh': '0', 'T.particles': '0', 'Ar.vapor.orig': '0', 'U.particles': '0', 'alpha.vapor.orig': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: bed
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['physicalProperties.solid', 'g', 'phaseProperties', 'fvModels', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.air', 'physicalProperties.air', 'T.air', 'alpha.air.orig', 'U.air', 'alpha.solid.orig', 'T.water', 'p_rgh', 'alpha.water.orig', 'T.solid', 'p', 'U.water', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties.solid': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'fvModels': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.air': 'constant', 'T.air': '0', 'alpha.air.orig': '0', 'U.air': '0', 'alpha.solid.orig': '0', 'T.water': '0', 'p_rgh': '0', 'alpha.water.orig': '0', 'T.solid': '0', 'p': '0', 'U.water': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: bubbleColumnEvaporating
+case domain: multiphase
+case category: laminar
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.liquid', 'momentumTransport.liquid', 'physicalProperties.gas', 'momentumTransport.gas', 'alpha.liquid.orig', 'CO.gas', 'T.gas', 'H2O.liquid', 'alpha.gas.orig', 'U.liquid', 'p_rgh', 'Ydefault', 'H2O.gas', 'T.liquid', 'air.liquid', 'U.gas', 'air.gas', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'continuityFunctions', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'momentumTransport.liquid': 'constant', 'physicalProperties.gas': 'constant', 'momentumTransport.gas': 'constant', 'alpha.liquid.orig': '0', 'CO.gas': '0', 'T.gas': '0', 'H2O.liquid': '0', 'alpha.gas.orig': '0', 'U.liquid': '0', 'p_rgh': '0', 'Ydefault': '0', 'H2O.gas': '0', 'T.liquid': '0', 'air.liquid': '0', 'U.gas': '0', 'air.gas': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'continuityFunctions': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: wallBoilingIATE
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['thermophysicalTransport.liquid', 'g', 'phaseProperties', 'physicalProperties.liquid', 'thermophysicalTransport.gas', 'momentumTransport.liquid', 'physicalProperties.gas', 'momentumTransport.gas', 'alphat.liquid', 'alpha.gas', 'T.gas', 'kappai.gas', 'nut.gas', 'alpha.liquid', 'nut.liquid', 'omega.liquid', 'U.liquid', 'p_rgh', 'epsilon.gas', 'epsilon.liquid', 'T.liquid', 'k.gas', 'U.gas', 'alphat.gas', 'k.liquid', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict.orig', 'extrudeMeshDict', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'thermophysicalTransport.liquid': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'thermophysicalTransport.gas': 'constant', 'momentumTransport.liquid': 'constant', 'physicalProperties.gas': 'constant', 'momentumTransport.gas': 'constant', 'alphat.liquid': '0', 'alpha.gas': '0', 'T.gas': '0', 'kappai.gas': '0', 'nut.gas': '0', 'alpha.liquid': '0', 'nut.liquid': '0', 'omega.liquid': '0', 'U.liquid': '0', 'p_rgh': '0', 'epsilon.gas': '0', 'epsilon.liquid': '0', 'T.liquid': '0', 'k.gas': '0', 'U.gas': '0', 'alphat.gas': '0', 'k.liquid': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict.orig': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: fluidisedBed
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.particles', 'momentumTransport.particles', 'momentumTransport.air', 'physicalProperties.air', 'T.air', 'alphat.air', 'alphat.particles', 'nut.particles', 'alpha.particles.orig', 'alpha.air.orig', 'k.air', 'U.air', 'Theta.particles', 'p_rgh', 'T.particles', 'nut.air', 'epsilon.air', 'U.particles', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.particles': 'constant', 'momentumTransport.particles': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.air': 'constant', 'T.air': '0', 'alphat.air': '0', 'alphat.particles': '0', 'nut.particles': '0', 'alpha.particles.orig': '0', 'alpha.air.orig': '0', 'k.air': '0', 'U.air': '0', 'Theta.particles': '0', 'p_rgh': '0', 'T.particles': '0', 'nut.air': '0', 'epsilon.air': '0', 'U.particles': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pipeBend
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.particles', 'momentumTransport.particles', 'physicalProperties.water', 'momentumTransport.water', 'f.particles', 'alpha.water', 'alphat.particles', 'nut.particles', 'k.water', 'T.water', 'p_rgh', 'T.particles', 'nut.water', 'alphat.water', 'epsilon.water', 'alpha.particles', 'U.particles', 'p', 'U.water', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.particles': 'constant', 'momentumTransport.particles': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'f.particles': '0', 'alpha.water': '0', 'alphat.particles': '0', 'nut.particles': '0', 'k.water': '0', 'T.water': '0', 'p_rgh': '0', 'T.particles': '0', 'nut.water': '0', 'alphat.water': '0', 'epsilon.water': '0', 'alpha.particles': '0', 'U.particles': '0', 'p': '0', 'U.water': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: LBend
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['g', 'momentumTransport.solids', 'phaseProperties', 'physicalProperties.solids', 'physicalProperties.gas', 'momentumTransport.gas', 'alpha.gas', 'T.gas', 'alpha.solids', 'nut.gas', 'p_rgh', 'epsilon.gas', 'Theta.solids', 'nut.solids', 'U.solids', 'alphat.solids', 'k.gas', 'T.solids', 'U.gas', 'alphat.gas', 'p', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'momentumTransport.solids': 'constant', 'phaseProperties': 'constant', 'physicalProperties.solids': 'constant', 'physicalProperties.gas': 'constant', 'momentumTransport.gas': 'constant', 'alpha.gas': '0', 'T.gas': '0', 'alpha.solids': '0', 'nut.gas': '0', 'p_rgh': '0', 'epsilon.gas': '0', 'Theta.solids': '0', 'nut.solids': '0', 'U.solids': '0', 'alphat.solids': '0', 'k.gas': '0', 'T.solids': '0', 'U.gas': '0', 'alphat.gas': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: bubblePipe
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'fvModels', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.air2', 'momentumTransport.air1', 'physicalProperties.air1', 'physicalProperties.air2', 'alpha.water', 'U.air2', 'U.air1', 'T.air2', 'f.air1', 'k.water', 'alpha.air2', 'T.water', 'p_rgh', 'nut.water', 'alpha.air1', 'alphat.water', 'omega.water', 'f.air2', 'p', 'T.air1', 'U.water', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'fvModels': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.air2': 'constant', 'momentumTransport.air1': 'constant', 'physicalProperties.air1': 'constant', 'physicalProperties.air2': 'constant', 'alpha.water': '0', 'U.air2': '0', 'U.air1': '0', 'T.air2': '0', 'f.air1': '0', 'k.water': '0', 'alpha.air2': '0', 'T.water': '0', 'p_rgh': '0', 'nut.water': '0', 'alpha.air1': '0', 'alphat.water': '0', 'omega.water': '0', 'f.air2': '0', 'p': '0', 'T.air1': '0', 'U.water': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: wallBoiling
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['thermophysicalTransport.liquid', 'g', 'phaseProperties', 'physicalProperties.liquid', 'thermophysicalTransport.gas', 'momentumTransport.liquid', 'physicalProperties.gas', 'momentumTransport.gas', 'alphat.liquid', 'alpha.gas', 'T.gas', 'nut.gas', 'alpha.liquid', 'nut.liquid', 'omega.liquid', 'U.liquid', 'p_rgh', 'epsilon.gas', 'epsilon.liquid', 'omega.gas', 'T.liquid', 'k.gas', 'U.gas', 'alphat.gas', 'k.liquid', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict.orig', 'extrudeMeshDict', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'thermophysicalTransport.liquid': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'thermophysicalTransport.gas': 'constant', 'momentumTransport.liquid': 'constant', 'physicalProperties.gas': 'constant', 'momentumTransport.gas': 'constant', 'alphat.liquid': '0', 'alpha.gas': '0', 'T.gas': '0', 'nut.gas': '0', 'alpha.liquid': '0', 'nut.liquid': '0', 'omega.liquid': '0', 'U.liquid': '0', 'p_rgh': '0', 'epsilon.gas': '0', 'epsilon.liquid': '0', 'omega.gas': '0', 'T.liquid': '0', 'k.gas': '0', 'U.gas': '0', 'alphat.gas': '0', 'k.liquid': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict.orig': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: wallBoilingPolydisperse
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['thermophysicalTransport.liquid', 'g', 'phaseProperties', 'physicalProperties.liquid', 'thermophysicalTransport.gas', 'momentumTransport.liquid', 'physicalProperties.gas', 'momentumTransport.gas', 'alphat.liquid', 'alpha.gas', 'T.gas', 'nut.gas', 'alpha.liquid', 'nut.liquid', 'omega.liquid', 'U.liquid', 'p_rgh', 'epsilon.gas', 'epsilon.liquid', 'omega.gas', 'f.gas', 'T.liquid', 'k.gas', 'U.gas', 'alphat.gas', 'k.liquid', 'p', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict.orig', 'extrudeMeshDict', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'thermophysicalTransport.liquid': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'thermophysicalTransport.gas': 'constant', 'momentumTransport.liquid': 'constant', 'physicalProperties.gas': 'constant', 'momentumTransport.gas': 'constant', 'alphat.liquid': '0', 'alpha.gas': '0', 'T.gas': '0', 'nut.gas': '0', 'alpha.liquid': '0', 'nut.liquid': '0', 'omega.liquid': '0', 'U.liquid': '0', 'p_rgh': '0', 'epsilon.gas': '0', 'epsilon.liquid': '0', 'omega.gas': '0', 'f.gas': '0', 'T.liquid': '0', 'k.gas': '0', 'U.gas': '0', 'alphat.gas': '0', 'k.liquid': '0', 'p': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict.orig': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: bubbleColumnEvaporatingReacting
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'reactions.gas', 'thermo.gas', 'physicalProperties.liquid', 'combustionProperties.gas', 'chemistryProperties.gas', 'momentumTransport.liquid', 'physicalProperties.gas', 'momentumTransport.gas', 'alpha.liquid.orig', 'CO.gas', 'T.gas', 'Ydefault.gas', 'alpha.gas.orig', 'nut.gas', 'AIR.gas', 'U.liquid', 'p_rgh', 'epsilon.gas', 'H2O.gas', 'T.liquid', 'k.gas', 'U.gas', 'alphat.gas', 'p', 'decomposeParDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'reactions.gas': 'constant', 'thermo.gas': 'constant', 'physicalProperties.liquid': 'constant', 'combustionProperties.gas': 'constant', 'chemistryProperties.gas': 'constant', 'momentumTransport.liquid': 'constant', 'physicalProperties.gas': 'constant', 'momentumTransport.gas': 'constant', 'alpha.liquid.orig': '0', 'CO.gas': '0', 'T.gas': '0', 'Ydefault.gas': '0', 'alpha.gas.orig': '0', 'nut.gas': '0', 'AIR.gas': '0', 'U.liquid': '0', 'p_rgh': '0', 'epsilon.gas': '0', 'H2O.gas': '0', 'T.liquid': '0', 'k.gas': '0', 'U.gas': '0', 'alphat.gas': '0', 'p': '0', 'decomposeParDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: bubbleColumn
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.water', 'momentumTransport.water', 'momentumTransport.air', 'physicalProperties.air', 'T.air', 'km', 'alphat.air', 'alpha.air.orig', 'k.air', 'U.air', 'k.water', 'T.water', 'p_rgh', 'nut.water', 'alpha.water.orig', 'alphat.water', 'epsilon.water', 'nut.air', 'epsilonm', 'epsilon.air', 'p', 'U.water', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'setFieldsDict', 'controlDict', 'fvSchemes']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.water': 'constant', 'momentumTransport.water': 'constant', 'momentumTransport.air': 'constant', 'physicalProperties.air': 'constant', 'T.air': '0', 'km': '0', 'alphat.air': '0', 'alpha.air.orig': '0', 'k.air': '0', 'U.air': '0', 'k.water': '0', 'T.water': '0', 'p_rgh': '0', 'nut.water': '0', 'alpha.water.orig': '0', 'alphat.water': '0', 'epsilon.water': '0', 'nut.air': '0', 'epsilonm': '0', 'epsilon.air': '0', 'p': '0', 'U.water': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'setFieldsDict': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: Grossetete
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['g', 'phaseProperties', 'physicalProperties.liquid', 'momentumTransport.liquid', 'physicalProperties.gas', 'momentumTransport.gas', 'alphat.liquid', 'alpha.gas', 'T.gas', 'nut.gas', 'alpha.liquid', 'nut.liquid', 'omega.liquid', 'U.liquid', 'p_rgh', 'epsilon.gas', 'epsilon.liquid', 'T.liquid', 'k.gas', 'U.gas', 'alphat.gas', 'k.liquid', 'p', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict', 'extrudeMeshDict', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'momentumTransport.liquid': 'constant', 'physicalProperties.gas': 'constant', 'momentumTransport.gas': 'constant', 'alphat.liquid': '0', 'alpha.gas': '0', 'T.gas': '0', 'nut.gas': '0', 'alpha.liquid': '0', 'nut.liquid': '0', 'omega.liquid': '0', 'U.liquid': '0', 'p_rgh': '0', 'epsilon.gas': '0', 'epsilon.liquid': '0', 'T.liquid': '0', 'k.gas': '0', 'U.gas': '0', 'alphat.gas': '0', 'k.liquid': '0', 'p': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: wallBoilingPolydisperseTwoGroups
+case domain: multiphase
+case category: RAS
+case solver: multiphaseEulerFoam
+case input name:['thermophysicalTransport.liquid', 'g', 'phaseProperties', 'physicalProperties.liquid', 'thermophysicalTransport.gas2', 'thermophysicalTransport.gas', 'momentumTransport.liquid', 'momentumTransport.gas2', 'physicalProperties.gas', 'physicalProperties.gas2', 'momentumTransport.gas', 'nut.gas2', 'k.gas2', 'alphat.liquid', 'alpha.gas', 'T.gas', 'f.gas2', 'nut.gas', 'alpha.liquid', 'nut.liquid', 'epsilon.gas2', 'omega.liquid', 'U.liquid', 'alphat.gas2', 'p_rgh', 'epsilon.gas', 'epsilon.liquid', 'omega.gas', 'f.gas', 'T.liquid', 'omega.gas2', 'k.gas', 'T.gas2', 'alpha.gas2', 'U.gas', 'alphat.gas', 'k.liquid', 'p', 'U.gas2', 'decomposeParDict', 'topoSetDict', 'blockMeshDict', 'fvSolution', 'fvConstraints', 'controlDict.orig', 'extrudeMeshDict', 'fvSchemes', 'createGraphs']
+corresponding input folder:{'thermophysicalTransport.liquid': 'constant', 'g': 'constant', 'phaseProperties': 'constant', 'physicalProperties.liquid': 'constant', 'thermophysicalTransport.gas2': 'constant', 'thermophysicalTransport.gas': 'constant', 'momentumTransport.liquid': 'constant', 'momentumTransport.gas2': 'constant', 'physicalProperties.gas': 'constant', 'physicalProperties.gas2': 'constant', 'momentumTransport.gas': 'constant', 'nut.gas2': '0', 'k.gas2': '0', 'alphat.liquid': '0', 'alpha.gas': '0', 'T.gas': '0', 'f.gas2': '0', 'nut.gas': '0', 'alpha.liquid': '0', 'nut.liquid': '0', 'epsilon.gas2': '0', 'omega.liquid': '0', 'U.liquid': '0', 'alphat.gas2': '0', 'p_rgh': '0', 'epsilon.gas': '0', 'epsilon.liquid': '0', 'omega.gas': '0', 'f.gas': '0', 'T.liquid': '0', 'omega.gas2': '0', 'k.gas': '0', 'T.gas2': '0', 'alpha.gas2': '0', 'U.gas': '0', 'alphat.gas': '0', 'k.liquid': '0', 'p': '0', 'U.gas2': '0', 'decomposeParDict': 'system', 'topoSetDict': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'fvConstraints': 'system', 'controlDict.orig': 'system', 'extrudeMeshDict': 'system', 'fvSchemes': 'system', 'createGraphs': 'validation'}
+case end.###
+
+###case begin:
+case name: plateHole
+case domain: stressAnalysis
+case category: None
+case solver: solidDisplacementFoam
+case input name:['physicalProperties', 'T', 'D', 'graphUniform', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'T': '0', 'D': '0', 'graphUniform': 'system', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: beamEndLoad
+case domain: stressAnalysis
+case category: None
+case solver: solidEquilibriumDisplacementFoam
+case input name:['physicalProperties', 'T', 'D', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'T': '0', 'D': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: flange
+case domain: basic
+case category: None
+case solver: laplacianFoam
+case input name:['physicalProperties', 'T', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'T': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: cylinder
+case domain: basic
+case category: None
+case solver: potentialFoam
+case input name:['U.orig', 'p.orig', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'U.orig': '0', 'p.orig': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDaily
+case domain: basic
+case category: None
+case solver: potentialFoam
+case input name:['U.orig', 'p.orig', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'U.orig': '0', 'p.orig': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: pitzDaily
+case domain: basic
+case category: None
+case solver: scalarTransportFoam
+case input name:['physicalProperties', 'T', 'U', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'physicalProperties': 'constant', 'T': '0', 'U': '0', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
+###case begin:
+case name: europeanCall
+case domain: financial
+case category: None
+case solver: financialFoam
+case input name:['financialProperties', 'V', 'blockMeshDict', 'fvSolution', 'controlDict', 'fvSchemes']
+corresponding input folder:{'financialProperties': 'constant', 'V': '0', 'blockMeshDict': 'system', 'fvSolution': 'system', 'controlDict': 'system', 'fvSchemes': 'system'}
+case end.###
+
