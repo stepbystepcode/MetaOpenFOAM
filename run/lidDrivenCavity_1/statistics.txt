@@ -1,0 +1,9 @@
+Loop: 20
+Executability: 0
+Total Tokens: 5531
+Prompt Tokens: 2401
+Completion Tokens: 3130
+Running Time: 150.7657446861267
+Number of Input Files: 7
+Lines Per File: 79.42857142857143
+Total Lines of Inputs: 556

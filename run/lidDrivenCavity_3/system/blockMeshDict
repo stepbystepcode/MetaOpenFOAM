@@ -1,0 +1,102 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+scale   1;
+
+vertices
+(
+    (0 0 0) // 0
+    (1 0 0) // 1
+    (1 1 0) // 2
+    (0 1 0) // 3
+    (0 0 1) // 4
+    (1 0 1) // 5
+    (1 1 1) // 6
+    (0 1 1) // 7
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (100 100 1) simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+boundary
+(
+    leftWall
+    {
+        type wall;
+        faces
+        (
+            (0 3 7 4)
+        );
+    }
+
+    rightWall
+    {
+        type wall;
+        faces
+        (
+            (1 2 6 5)
+        );
+    }
+
+    bottomWall
+    {
+        type wall;
+        faces
+        (
+            (0 1 5 4)
+        );
+    }
+
+    topWall
+    {
+        type wall;
+        faces
+        (
+            (2 3 7 6)
+        );
+    }
+
+    frontAndBack
+    {
+        type symmetryPlane;
+        faces
+        (
+            (0 1 2 3)
+            (4 5 6 7)
+        );
+    }
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //
+
+Wait, but in the example, the mergePatchPairs was not present, but it's optional. Including it with empty is okay.
+
+Now, check if all faces are covered. The hex has 6 faces, each assigned to a boundary. The frontAndBack combines two faces (front and back), so that's okay.
+
+The topWall is correctly assigned to the face at y=1. The other walls are correct.
+
+This should create a cube with all walls except the top, which is a wall. The top wall can then have a velocity boundary condition set to 1 m/s in the x-direction in the U file.
+
+I think this should work. Let me double-check the vertices and faces.
+
+Another thing: the scale is set to 1, so the coordinates are in meters. The user didn't specify dimensions, so assuming unit length is okay.
+
+Yes, this should be the correct blockMeshDict for a lid-driven cavity with the top wall moving at 1 m/s.
+</think>
+

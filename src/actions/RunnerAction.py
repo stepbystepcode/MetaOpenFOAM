@@ -1,4 +1,3 @@
-
 import re
 import subprocess
 from typing import List
@@ -310,8 +309,10 @@ class RunnerAction(Action):
                 command_part = line.split('Running ')[1]
 
                 command = command_part.split(' on ')[0]
-                command_true = command.split()[0]
-                commands.append(command_true)
+                # Check if command is not empty before splitting
+                if command and command.strip():
+                    command_true = command.split()[0]
+                    commands.append(command_true)
         
         return commands
     def compare_commands_with_error_logs(self, commands_run, error_logs):
@@ -460,4 +461,3 @@ class RunnerAction(Action):
         
         print("="*70)
         print(f"{'Total':<40} {total_files:<15} {total_lines:<15}")
-

@@ -1,0 +1,39 @@
+FoamFile
+{
+    format      ascii;
+    class       volScalarField;
+    object      p;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    #includeEtc "caseDicts/setConstraintTypes"
+
+    bottomWall
+    {
+        type            fixedFluxExtrapolatedPressure;
+    }
+
+    leftWall
+    {
+        type            fixedFluxExtrapolatedPressure;
+    }
+
+    rightWall
+    {
+        type            fixedFluxExtrapolatedPressure;
+    }
+
+    topWall
+    {
+        type            fixedFluxExtrapolatedPressure;
+    }
+}
+
+
+// ************************************************************************* //
